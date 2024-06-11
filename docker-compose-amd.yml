@@ -1,0 +1,78 @@
+version: '3.8'
+services:
+  web-scraper:
+    container_name: web-scraper
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    restart: always
+
+  neo4j:
+    container_name: neo4j
+    image: neo4j:5.20
+    networks:
+      neo4j-internal:
+        aliases:
+          - neo4j-network
+    ports:
+      - '7474:7474'
+      - '7687:7687'
+    volumes:
+      - ./neo4j.conf:/conf/neo4j.conf # This is the main configuration file.
+      - ./neo4j/data:/data
+      - ./neo4j/logs:/logs
+      - ./neo4j/import:/var/lib/neo4j/import
+      - ./neo4j/plugins:/plugins
+    environment:
+      - NEO4J_ACCEPT_LICENSE_AGREEMENT=yes
+      - NEO4J_AUTH=neo4juser/neo4jpass
+      - NEO4JLABS_PLUGINS='["apoc", "n10s"]'
+    healthcheck:
+      test:
+        [
+          'CMD-SHELL',
+          'wget --no-verbose --tries=1 --spider localhost:7474 || exit 1',
+        ]
+    user: ${USER_ID}:${GROUP_ID}
+    restart: always
+
+  ollama:
+    image: ollama/ollama:rocm
+    container_name: ollama
+    devices:
+      - '/dev/kfd:/dev/kfd'
+      - '/dev/dri:/dev/dri'
+    volumes:
+      - ollama:/root/.ollama
+    ports:
+      - '7869:11434'
+    restart: unless-stopped
+    networks:
+      - ollama-docker
+
+  ollama-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: ollama-webui
+    volumes:
+      - ./ollama/ollama-webui:/app/backend/data
+    depends_on:
+      - ollama
+    ports:
+      - 8080:8080
+    environment: # https://docs.openwebui.com/getting-started/env-configuration#default_models
+      - OLLAMA_BASE_URLS=http://host.docker.internal:7869 #comma separated ollama hosts
+      - ENV=dev
+      - WEBUI_AUTH=False
+      - WEBUI_NAME=valiantlynx AI
+      - WEBUI_URL=http://localhost:8080
+      - WEBUI_SECRET_KEY=t0p-s3cr3t
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    restart: unless-stopped
+    networks:
+      - ollama-docker
+
+networks:
+  neo4j-internal:
+  ollama-docker:
+    external: false
