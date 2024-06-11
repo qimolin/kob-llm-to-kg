@@ -2,14 +2,21 @@
 
 # neo4j 
 
+## Automatic Setup
+
+When the neo4j container is started, the following steps are automatically executed:
+- The APOC and neosemantics libraries are installed
+- The unique uri constraint is created (if it does not exist)
+
 ## Ontology Import
+
+To import the CIDOC-CRM ontology, follow these steps, it is required every time the data folder is empty:
 - start docker container
 - run the following command in the neo4j browser
 ``` cypher
 CALL n10s.graphconfig.init({ handleVocabUris: 'MAP'})
 CALL n10s.onto.import.fetch("https://cidoc-crm.org/rdfs/7.1.3/CIDOC_CRM_v7.1.3.rdfs","RDF/XML");
 ```
-- done
 
 # Docker Compose
 ## Ollama
