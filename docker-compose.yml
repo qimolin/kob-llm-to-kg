@@ -1,5 +1,12 @@
 version: '3.8'
 services:
+  web-scraper:
+    container_name: web-scraper
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    restart: always
+
   neo4j:
     container_name: neo4j
     image: neo4j:5.20
