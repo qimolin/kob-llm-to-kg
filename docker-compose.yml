@@ -5,6 +5,8 @@ services:
       context: ./app
       dockerfile: Dockerfile
     restart: always
+    networks:
+      - ollama-docker
 
   neo4j:
     container_name: neo4j
@@ -37,10 +39,12 @@ services:
     volumes:
       - .:/code
       - ./ollama/ollama:/root/.ollama
+      - ./entrypoint.sh:/entrypoint.sh
     container_name: ollama
     pull_policy: always
     tty: true
     restart: always
+    entrypoint: ['/usr/bin/bash', '/entrypoint.sh']
     environment:
       - OLLAMA_KEEP_ALIVE=24h
       - OLLAMA_HOST=0.0.0.0
