@@ -5,6 +5,8 @@ services:
       context: ./app
       dockerfile: Dockerfile
     restart: always
+    networks:
+      - ollama-docker
 
   neo4j:
     container_name: neo4j

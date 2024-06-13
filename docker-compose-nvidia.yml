@@ -5,6 +5,8 @@ services:
       context: ./app
       dockerfile: Dockerfile
     restart: always
+    networks:
+      - ollama-docker
 
   neo4j:
     container_name: neo4j
@@ -31,6 +33,7 @@ services:
   ollama:
     volumes:
       - ./ollama/ollama:/root/.ollama
+      - ./entrypoint.sh:/entrypoint.sh
     container_name: ollama
     pull_policy: always
     tty: true
