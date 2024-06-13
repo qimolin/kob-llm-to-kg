@@ -54,3 +54,9 @@ if __name__ == '__main__':
     with open(f"./texts/{page_name}.txt", "w+") as f:
         print(contents)
         f.write(contents.strip())
+
+    # OLLAMA
+    print("starting with ollama")
+    prompt = f"Given the following text, why is Temple Street called Temple Street? {contents}"
+    response = ollama.generate(model="llama3", prompt=prompt)
+    print(response)
