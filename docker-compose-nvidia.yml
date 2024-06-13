@@ -49,6 +49,7 @@ services:
             - driver: nvidia
               count: 1
               capabilities: [gpu]
+    entrypoint: ['/usr/bin/bash', '/entrypoint.sh']
 
   ollama-webui:
     image: ghcr.io/open-webui/open-webui:main
