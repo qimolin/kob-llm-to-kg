@@ -1,3 +1,4 @@
+import json
 import ollama
 import re
 import requests
@@ -55,9 +56,11 @@ if __name__ == '__main__':
         print(contents)
         f.write(contents.strip())
 
+    with open("./ontology.json", "r") as f:
+        ontology = json.loads(f.read())
+
     # OLLAMA
     print("starting with ollama")
-    # prompt = f"Given the following text, why is Temple Street called Temple Street? {contents}"
-    prompt="tell me a joke"
+    prompt = f"Given the following text, why is Temple Street called Temple Street? {contents}"
     response = ollama.generate(model="llama3", prompt=prompt)
     print(response)
