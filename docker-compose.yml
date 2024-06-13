@@ -17,15 +17,17 @@ services:
       - '7474:7474'
       - '7687:7687'
     volumes:
-      - ./neo4j.conf:/conf/neo4j.conf # This is the main configuration file.
+      - ./neo4j/conf:/conf
       - ./neo4j/data:/data
       - ./neo4j/logs:/logs
       - ./neo4j/import:/var/lib/neo4j/import
-      - ./neo4j/plugins:/plugins
     environment:
       - NEO4J_ACCEPT_LICENSE_AGREEMENT=yes
-      - NEO4J_AUTH=neo4juser/neo4jpass
-      - NEO4JLABS_PLUGINS='["apoc", "n10s"]'
+      - NEO4J_AUTH=neo4j/neo4jpass
+      - NEO4J_dbms_security_procedures_unrestricted=apoc.*,n10s.*
+      - NEO4J_dbms_security_procedures_allowlist=apoc.*,n10s.*
+      - NEO4J_dbms_security_allow__csv__import__from__file__urls=true
+      - NEO4J_PLUGINS=["apoc", "n10s"]
     restart: always
 
   ollama:
