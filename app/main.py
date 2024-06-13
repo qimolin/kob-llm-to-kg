@@ -1,3 +1,5 @@
+import ollama
+import re
 import requests
 from bs4 import BeautifulSoup
 from requests import HTTPError, Response
@@ -14,24 +16,33 @@ def get_url(url: str) -> Response:
     return res
 
 
-def get_contents(res: Response) -> tuple[str]:
+def get_contents(res: Response) -> str:
     soup = BeautifulSoup(res.text, features="html.parser")
 
     title_soup = soup.find("h1", attrs={"class": "entry-title"})
     title = title_soup.text
+    if title.split()[0].isnumeric():
+        title = " ".join(title.split()[1:])
 
     content_soup = soup.find("div", attrs={"class": "entry-content"})
-    contents = "TITLE=" + title + "\n"
+    contents = "TITLE=" + title
+    english_heading = True
     for c in content_soup.children:
         if c.name != "p" and c.name != None:
-            break
-        contents += c.text
+            if len(re.findall(r'[\u4e00-\u9fff]+', c.text)) > 0:
+                english_heading = False
+            else:
+                english_heading = True
+                contents += "\n"
+
+        if english_heading:
+            contents += c.text
 
     return contents
 
 
 if __name__ == '__main__':
-    url = "https://kcholdbazaar.com/mural-art-the-big-well-and-the-coolie-keng/"
+    url = "https://kcholdbazaar.com/040-temple-street-green-hill/"
     try:
         res = get_url(url)
     except HTTPError:
@@ -41,4 +52,5 @@ if __name__ == '__main__':
 
     page_name = url.strip("/").split("/")[-1]
     with open(f"./texts/{page_name}.txt", "w+") as f:
+        print(contents)
         f.write(contents.strip())
