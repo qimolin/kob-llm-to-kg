@@ -1,0 +1,2404 @@
+[
+  {
+    "r": {
+      "start": {
+        "identity": 1,
+        "labels": [
+          "E74_Group"
+        ],
+        "properties": {
+          "name": "Kwong Wai Siew Association",
+          "id": "89e264cc-c5d7-4654-a3d7-cbe4577375e7"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:1"
+      },
+      "end": {
+        "identity": 0,
+        "labels": [
+          "E21_Person"
+        ],
+        "properties": {
+          "name": "Lau Chek",
+          "id": "d397611b-f260-4121-b967-edca9bda8579"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:0"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 1,
+            "labels": [
+              "E74_Group"
+            ],
+            "properties": {
+              "name": "Kwong Wai Siew Association",
+              "id": "89e264cc-c5d7-4654-a3d7-cbe4577375e7"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:1"
+          },
+          "relationship": {
+            "identity": 0,
+            "start": 1,
+            "end": 0,
+            "type": "P107_HAS_CURRENT_OR_FORMER_MEMBER",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:0",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:1",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:0"
+          },
+          "end": {
+            "identity": 0,
+            "labels": [
+              "E21_Person"
+            ],
+            "properties": {
+              "name": "Lau Chek",
+              "id": "d397611b-f260-4121-b967-edca9bda8579"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:0"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 0,
+        "labels": [
+          "E21_Person"
+        ],
+        "properties": {
+          "name": "Lau Chek",
+          "id": "d397611b-f260-4121-b967-edca9bda8579"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:0"
+      },
+      "end": {
+        "identity": 1,
+        "labels": [
+          "E74_Group"
+        ],
+        "properties": {
+          "name": "Kwong Wai Siew Association",
+          "id": "89e264cc-c5d7-4654-a3d7-cbe4577375e7"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:1"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 0,
+            "labels": [
+              "E21_Person"
+            ],
+            "properties": {
+              "name": "Lau Chek",
+              "id": "d397611b-f260-4121-b967-edca9bda8579"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:0"
+          },
+          "relationship": {
+            "identity": 0,
+            "start": 1,
+            "end": 0,
+            "type": "P107_HAS_CURRENT_OR_FORMER_MEMBER",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:0",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:1",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:0"
+          },
+          "end": {
+            "identity": 1,
+            "labels": [
+              "E74_Group"
+            ],
+            "properties": {
+              "name": "Kwong Wai Siew Association",
+              "id": "89e264cc-c5d7-4654-a3d7-cbe4577375e7"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:1"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 5,
+        "labels": [
+          "E5_Event"
+        ],
+        "properties": {
+          "name": "Bau Chinese Revolt",
+          "id": "55003842-a1d3-4934-b52a-3b1873f263b3"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:5"
+      },
+      "end": {
+        "identity": 7,
+        "labels": [
+          "E52_TimeSpan"
+        ],
+        "properties": {
+          "name": "1850s",
+          "id": "17a1dba4-1dc8-4aaf-a5a2-70f3b6ccb1a3"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:7"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 5,
+            "labels": [
+              "E5_Event"
+            ],
+            "properties": {
+              "name": "Bau Chinese Revolt",
+              "id": "55003842-a1d3-4934-b52a-3b1873f263b3"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:5"
+          },
+          "relationship": {
+            "identity": 1,
+            "start": 5,
+            "end": 7,
+            "type": "P4_HAS_TIME_SPAN",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:1",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:5",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:7"
+          },
+          "end": {
+            "identity": 7,
+            "labels": [
+              "E52_TimeSpan"
+            ],
+            "properties": {
+              "name": "1850s",
+              "id": "17a1dba4-1dc8-4aaf-a5a2-70f3b6ccb1a3"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:7"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 7,
+        "labels": [
+          "E52_TimeSpan"
+        ],
+        "properties": {
+          "name": "1850s",
+          "id": "17a1dba4-1dc8-4aaf-a5a2-70f3b6ccb1a3"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:7"
+      },
+      "end": {
+        "identity": 5,
+        "labels": [
+          "E5_Event"
+        ],
+        "properties": {
+          "name": "Bau Chinese Revolt",
+          "id": "55003842-a1d3-4934-b52a-3b1873f263b3"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:5"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 7,
+            "labels": [
+              "E52_TimeSpan"
+            ],
+            "properties": {
+              "name": "1850s",
+              "id": "17a1dba4-1dc8-4aaf-a5a2-70f3b6ccb1a3"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:7"
+          },
+          "relationship": {
+            "identity": 1,
+            "start": 5,
+            "end": 7,
+            "type": "P4_HAS_TIME_SPAN",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:1",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:5",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:7"
+          },
+          "end": {
+            "identity": 5,
+            "labels": [
+              "E5_Event"
+            ],
+            "properties": {
+              "name": "Bau Chinese Revolt",
+              "id": "55003842-a1d3-4934-b52a-3b1873f263b3"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:5"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 8,
+        "labels": [
+          "E5_Event"
+        ],
+        "properties": {
+          "name": "Arrival of James Brooke and his crew in Kuching",
+          "id": "cb105633-200a-4476-aec5-e3987bd0d0af"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:8"
+      },
+      "end": {
+        "identity": 3,
+        "labels": [
+          "E52_TimeSpan"
+        ],
+        "properties": {
+          "name": "1839",
+          "id": "76e2837e-24e9-4c56-9def-606d27ea9c2c"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:3"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 8,
+            "labels": [
+              "E5_Event"
+            ],
+            "properties": {
+              "name": "Arrival of James Brooke and his crew in Kuching",
+              "id": "cb105633-200a-4476-aec5-e3987bd0d0af"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:8"
+          },
+          "relationship": {
+            "identity": 2,
+            "start": 8,
+            "end": 3,
+            "type": "P4_HAS_TIME_SPAN",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:2",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:8",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:3"
+          },
+          "end": {
+            "identity": 3,
+            "labels": [
+              "E52_TimeSpan"
+            ],
+            "properties": {
+              "name": "1839",
+              "id": "76e2837e-24e9-4c56-9def-606d27ea9c2c"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:3"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 3,
+        "labels": [
+          "E52_TimeSpan"
+        ],
+        "properties": {
+          "name": "1839",
+          "id": "76e2837e-24e9-4c56-9def-606d27ea9c2c"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:3"
+      },
+      "end": {
+        "identity": 8,
+        "labels": [
+          "E5_Event"
+        ],
+        "properties": {
+          "name": "Arrival of James Brooke and his crew in Kuching",
+          "id": "cb105633-200a-4476-aec5-e3987bd0d0af"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:8"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 3,
+            "labels": [
+              "E52_TimeSpan"
+            ],
+            "properties": {
+              "name": "1839",
+              "id": "76e2837e-24e9-4c56-9def-606d27ea9c2c"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:3"
+          },
+          "relationship": {
+            "identity": 2,
+            "start": 8,
+            "end": 3,
+            "type": "P4_HAS_TIME_SPAN",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:2",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:8",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:3"
+          },
+          "end": {
+            "identity": 8,
+            "labels": [
+              "E5_Event"
+            ],
+            "properties": {
+              "name": "Arrival of James Brooke and his crew in Kuching",
+              "id": "cb105633-200a-4476-aec5-e3987bd0d0af"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:8"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 8,
+        "labels": [
+          "E5_Event"
+        ],
+        "properties": {
+          "name": "Arrival of James Brooke and his crew in Kuching",
+          "id": "cb105633-200a-4476-aec5-e3987bd0d0af"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:8"
+      },
+      "end": {
+        "identity": 12,
+        "labels": [
+          "E21_Person"
+        ],
+        "properties": {
+          "name": "James Brooke",
+          "id": "ccdbc628-b274-424a-8e49-8477c6fc4e96"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:12"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 8,
+            "labels": [
+              "E5_Event"
+            ],
+            "properties": {
+              "name": "Arrival of James Brooke and his crew in Kuching",
+              "id": "cb105633-200a-4476-aec5-e3987bd0d0af"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:8"
+          },
+          "relationship": {
+            "identity": 3,
+            "start": 8,
+            "end": 12,
+            "type": "P11_HAD_PARTICIPANT",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:3",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:8",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:12"
+          },
+          "end": {
+            "identity": 12,
+            "labels": [
+              "E21_Person"
+            ],
+            "properties": {
+              "name": "James Brooke",
+              "id": "ccdbc628-b274-424a-8e49-8477c6fc4e96"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:12"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 12,
+        "labels": [
+          "E21_Person"
+        ],
+        "properties": {
+          "name": "James Brooke",
+          "id": "ccdbc628-b274-424a-8e49-8477c6fc4e96"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:12"
+      },
+      "end": {
+        "identity": 8,
+        "labels": [
+          "E5_Event"
+        ],
+        "properties": {
+          "name": "Arrival of James Brooke and his crew in Kuching",
+          "id": "cb105633-200a-4476-aec5-e3987bd0d0af"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:8"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 12,
+            "labels": [
+              "E21_Person"
+            ],
+            "properties": {
+              "name": "James Brooke",
+              "id": "ccdbc628-b274-424a-8e49-8477c6fc4e96"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:12"
+          },
+          "relationship": {
+            "identity": 3,
+            "start": 8,
+            "end": 12,
+            "type": "P11_HAD_PARTICIPANT",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:3",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:8",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:12"
+          },
+          "end": {
+            "identity": 8,
+            "labels": [
+              "E5_Event"
+            ],
+            "properties": {
+              "name": "Arrival of James Brooke and his crew in Kuching",
+              "id": "cb105633-200a-4476-aec5-e3987bd0d0af"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:8"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 8,
+        "labels": [
+          "E5_Event"
+        ],
+        "properties": {
+          "name": "Arrival of James Brooke and his crew in Kuching",
+          "id": "cb105633-200a-4476-aec5-e3987bd0d0af"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:8"
+      },
+      "end": {
+        "identity": 10,
+        "labels": [
+          "E53_Place"
+        ],
+        "properties": {
+          "name": "Kuching",
+          "id": "7eb5ac89-5180-4c7f-9a64-07b46f7812a4"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:10"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 8,
+            "labels": [
+              "E5_Event"
+            ],
+            "properties": {
+              "name": "Arrival of James Brooke and his crew in Kuching",
+              "id": "cb105633-200a-4476-aec5-e3987bd0d0af"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:8"
+          },
+          "relationship": {
+            "identity": 4,
+            "start": 8,
+            "end": 10,
+            "type": "P7_TOOK_PLACE_AT",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:4",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:8",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:10"
+          },
+          "end": {
+            "identity": 10,
+            "labels": [
+              "E53_Place"
+            ],
+            "properties": {
+              "name": "Kuching",
+              "id": "7eb5ac89-5180-4c7f-9a64-07b46f7812a4"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:10"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 10,
+        "labels": [
+          "E53_Place"
+        ],
+        "properties": {
+          "name": "Kuching",
+          "id": "7eb5ac89-5180-4c7f-9a64-07b46f7812a4"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:10"
+      },
+      "end": {
+        "identity": 8,
+        "labels": [
+          "E5_Event"
+        ],
+        "properties": {
+          "name": "Arrival of James Brooke and his crew in Kuching",
+          "id": "cb105633-200a-4476-aec5-e3987bd0d0af"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:8"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 10,
+            "labels": [
+              "E53_Place"
+            ],
+            "properties": {
+              "name": "Kuching",
+              "id": "7eb5ac89-5180-4c7f-9a64-07b46f7812a4"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:10"
+          },
+          "relationship": {
+            "identity": 4,
+            "start": 8,
+            "end": 10,
+            "type": "P7_TOOK_PLACE_AT",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:4",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:8",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:10"
+          },
+          "end": {
+            "identity": 8,
+            "labels": [
+              "E5_Event"
+            ],
+            "properties": {
+              "name": "Arrival of James Brooke and his crew in Kuching",
+              "id": "cb105633-200a-4476-aec5-e3987bd0d0af"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:8"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 9,
+        "labels": [
+          "E52_TimeSpan"
+        ],
+        "properties": {
+          "name": "1856",
+          "id": "cc4d4d6e-1f98-4dd3-9f6f-f605ec673d52"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:9"
+      },
+      "end": {
+        "identity": 7,
+        "labels": [
+          "E52_TimeSpan"
+        ],
+        "properties": {
+          "name": "1850s",
+          "id": "17a1dba4-1dc8-4aaf-a5a2-70f3b6ccb1a3"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:7"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 9,
+            "labels": [
+              "E52_TimeSpan"
+            ],
+            "properties": {
+              "name": "1856",
+              "id": "cc4d4d6e-1f98-4dd3-9f6f-f605ec673d52"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:9"
+          },
+          "relationship": {
+            "identity": 5,
+            "start": 9,
+            "end": 7,
+            "type": "P86_FALLS_WITHIN",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:5",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:9",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:7"
+          },
+          "end": {
+            "identity": 7,
+            "labels": [
+              "E52_TimeSpan"
+            ],
+            "properties": {
+              "name": "1850s",
+              "id": "17a1dba4-1dc8-4aaf-a5a2-70f3b6ccb1a3"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:7"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 7,
+        "labels": [
+          "E52_TimeSpan"
+        ],
+        "properties": {
+          "name": "1850s",
+          "id": "17a1dba4-1dc8-4aaf-a5a2-70f3b6ccb1a3"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:7"
+      },
+      "end": {
+        "identity": 9,
+        "labels": [
+          "E52_TimeSpan"
+        ],
+        "properties": {
+          "name": "1856",
+          "id": "cc4d4d6e-1f98-4dd3-9f6f-f605ec673d52"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:9"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 7,
+            "labels": [
+              "E52_TimeSpan"
+            ],
+            "properties": {
+              "name": "1850s",
+              "id": "17a1dba4-1dc8-4aaf-a5a2-70f3b6ccb1a3"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:7"
+          },
+          "relationship": {
+            "identity": 5,
+            "start": 9,
+            "end": 7,
+            "type": "P86_FALLS_WITHIN",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:5",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:9",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:7"
+          },
+          "end": {
+            "identity": 9,
+            "labels": [
+              "E52_TimeSpan"
+            ],
+            "properties": {
+              "name": "1856",
+              "id": "cc4d4d6e-1f98-4dd3-9f6f-f605ec673d52"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:9"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 14,
+        "labels": [
+          "E5_Event"
+        ],
+        "properties": {
+          "name": "Arrival of Lau Chek and his compatriots in Kuching",
+          "id": "c9d17e84-06e1-4526-a44d-e14fcde6e109"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:14"
+      },
+      "end": {
+        "identity": 50,
+        "labels": [
+          "E52_TimeSpan"
+        ],
+        "properties": {
+          "name": "1820s",
+          "id": "f356e4e5-8709-4b69-bcf1-1ec185f31d22"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:50"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 14,
+            "labels": [
+              "E5_Event"
+            ],
+            "properties": {
+              "name": "Arrival of Lau Chek and his compatriots in Kuching",
+              "id": "c9d17e84-06e1-4526-a44d-e14fcde6e109"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:14"
+          },
+          "relationship": {
+            "identity": 6,
+            "start": 14,
+            "end": 50,
+            "type": "P4_HAS_TIME_SPAN",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:6",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:14",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:50"
+          },
+          "end": {
+            "identity": 50,
+            "labels": [
+              "E52_TimeSpan"
+            ],
+            "properties": {
+              "name": "1820s",
+              "id": "f356e4e5-8709-4b69-bcf1-1ec185f31d22"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:50"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 50,
+        "labels": [
+          "E52_TimeSpan"
+        ],
+        "properties": {
+          "name": "1820s",
+          "id": "f356e4e5-8709-4b69-bcf1-1ec185f31d22"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:50"
+      },
+      "end": {
+        "identity": 14,
+        "labels": [
+          "E5_Event"
+        ],
+        "properties": {
+          "name": "Arrival of Lau Chek and his compatriots in Kuching",
+          "id": "c9d17e84-06e1-4526-a44d-e14fcde6e109"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:14"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 50,
+            "labels": [
+              "E52_TimeSpan"
+            ],
+            "properties": {
+              "name": "1820s",
+              "id": "f356e4e5-8709-4b69-bcf1-1ec185f31d22"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:50"
+          },
+          "relationship": {
+            "identity": 6,
+            "start": 14,
+            "end": 50,
+            "type": "P4_HAS_TIME_SPAN",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:6",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:14",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:50"
+          },
+          "end": {
+            "identity": 14,
+            "labels": [
+              "E5_Event"
+            ],
+            "properties": {
+              "name": "Arrival of Lau Chek and his compatriots in Kuching",
+              "id": "c9d17e84-06e1-4526-a44d-e14fcde6e109"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:14"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 14,
+        "labels": [
+          "E5_Event"
+        ],
+        "properties": {
+          "name": "Arrival of Lau Chek and his compatriots in Kuching",
+          "id": "c9d17e84-06e1-4526-a44d-e14fcde6e109"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:14"
+      },
+      "end": {
+        "identity": 0,
+        "labels": [
+          "E21_Person"
+        ],
+        "properties": {
+          "name": "Lau Chek",
+          "id": "d397611b-f260-4121-b967-edca9bda8579"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:0"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 14,
+            "labels": [
+              "E5_Event"
+            ],
+            "properties": {
+              "name": "Arrival of Lau Chek and his compatriots in Kuching",
+              "id": "c9d17e84-06e1-4526-a44d-e14fcde6e109"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:14"
+          },
+          "relationship": {
+            "identity": 7,
+            "start": 14,
+            "end": 0,
+            "type": "P11_HAD_PARTICIPANT",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:7",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:14",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:0"
+          },
+          "end": {
+            "identity": 0,
+            "labels": [
+              "E21_Person"
+            ],
+            "properties": {
+              "name": "Lau Chek",
+              "id": "d397611b-f260-4121-b967-edca9bda8579"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:0"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 0,
+        "labels": [
+          "E21_Person"
+        ],
+        "properties": {
+          "name": "Lau Chek",
+          "id": "d397611b-f260-4121-b967-edca9bda8579"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:0"
+      },
+      "end": {
+        "identity": 14,
+        "labels": [
+          "E5_Event"
+        ],
+        "properties": {
+          "name": "Arrival of Lau Chek and his compatriots in Kuching",
+          "id": "c9d17e84-06e1-4526-a44d-e14fcde6e109"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:14"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 0,
+            "labels": [
+              "E21_Person"
+            ],
+            "properties": {
+              "name": "Lau Chek",
+              "id": "d397611b-f260-4121-b967-edca9bda8579"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:0"
+          },
+          "relationship": {
+            "identity": 7,
+            "start": 14,
+            "end": 0,
+            "type": "P11_HAD_PARTICIPANT",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:7",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:14",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:0"
+          },
+          "end": {
+            "identity": 14,
+            "labels": [
+              "E5_Event"
+            ],
+            "properties": {
+              "name": "Arrival of Lau Chek and his compatriots in Kuching",
+              "id": "c9d17e84-06e1-4526-a44d-e14fcde6e109"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:14"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 14,
+        "labels": [
+          "E5_Event"
+        ],
+        "properties": {
+          "name": "Arrival of Lau Chek and his compatriots in Kuching",
+          "id": "c9d17e84-06e1-4526-a44d-e14fcde6e109"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:14"
+      },
+      "end": {
+        "identity": 10,
+        "labels": [
+          "E53_Place"
+        ],
+        "properties": {
+          "name": "Kuching",
+          "id": "7eb5ac89-5180-4c7f-9a64-07b46f7812a4"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:10"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 14,
+            "labels": [
+              "E5_Event"
+            ],
+            "properties": {
+              "name": "Arrival of Lau Chek and his compatriots in Kuching",
+              "id": "c9d17e84-06e1-4526-a44d-e14fcde6e109"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:14"
+          },
+          "relationship": {
+            "identity": 8,
+            "start": 14,
+            "end": 10,
+            "type": "P7_TOOK_PLACE_AT",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:8",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:14",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:10"
+          },
+          "end": {
+            "identity": 10,
+            "labels": [
+              "E53_Place"
+            ],
+            "properties": {
+              "name": "Kuching",
+              "id": "7eb5ac89-5180-4c7f-9a64-07b46f7812a4"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:10"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 10,
+        "labels": [
+          "E53_Place"
+        ],
+        "properties": {
+          "name": "Kuching",
+          "id": "7eb5ac89-5180-4c7f-9a64-07b46f7812a4"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:10"
+      },
+      "end": {
+        "identity": 14,
+        "labels": [
+          "E5_Event"
+        ],
+        "properties": {
+          "name": "Arrival of Lau Chek and his compatriots in Kuching",
+          "id": "c9d17e84-06e1-4526-a44d-e14fcde6e109"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:14"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 10,
+            "labels": [
+              "E53_Place"
+            ],
+            "properties": {
+              "name": "Kuching",
+              "id": "7eb5ac89-5180-4c7f-9a64-07b46f7812a4"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:10"
+          },
+          "relationship": {
+            "identity": 8,
+            "start": 14,
+            "end": 10,
+            "type": "P7_TOOK_PLACE_AT",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:8",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:14",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:10"
+          },
+          "end": {
+            "identity": 14,
+            "labels": [
+              "E5_Event"
+            ],
+            "properties": {
+              "name": "Arrival of Lau Chek and his compatriots in Kuching",
+              "id": "c9d17e84-06e1-4526-a44d-e14fcde6e109"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:14"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 31,
+        "labels": [
+          "E5_Event"
+        ],
+        "properties": {
+          "name": "Arrival of Reverent F. McDougall and his wife Harriette McDougall in Kuching",
+          "id": "7bf2e0eb-85ff-4a52-afd6-96c1e527f2a4"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:31"
+      },
+      "end": {
+        "identity": 6,
+        "labels": [
+          "E52_TimeSpan"
+        ],
+        "properties": {
+          "name": "1848",
+          "id": "2144efcb-cc65-471d-9e14-9baf0179d58a"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:6"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 31,
+            "labels": [
+              "E5_Event"
+            ],
+            "properties": {
+              "name": "Arrival of Reverent F. McDougall and his wife Harriette McDougall in Kuching",
+              "id": "7bf2e0eb-85ff-4a52-afd6-96c1e527f2a4"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:31"
+          },
+          "relationship": {
+            "identity": 9,
+            "start": 31,
+            "end": 6,
+            "type": "P4_HAS_TIME_SPAN",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:9",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:31",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:6"
+          },
+          "end": {
+            "identity": 6,
+            "labels": [
+              "E52_TimeSpan"
+            ],
+            "properties": {
+              "name": "1848",
+              "id": "2144efcb-cc65-471d-9e14-9baf0179d58a"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:6"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 6,
+        "labels": [
+          "E52_TimeSpan"
+        ],
+        "properties": {
+          "name": "1848",
+          "id": "2144efcb-cc65-471d-9e14-9baf0179d58a"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:6"
+      },
+      "end": {
+        "identity": 31,
+        "labels": [
+          "E5_Event"
+        ],
+        "properties": {
+          "name": "Arrival of Reverent F. McDougall and his wife Harriette McDougall in Kuching",
+          "id": "7bf2e0eb-85ff-4a52-afd6-96c1e527f2a4"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:31"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 6,
+            "labels": [
+              "E52_TimeSpan"
+            ],
+            "properties": {
+              "name": "1848",
+              "id": "2144efcb-cc65-471d-9e14-9baf0179d58a"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:6"
+          },
+          "relationship": {
+            "identity": 9,
+            "start": 31,
+            "end": 6,
+            "type": "P4_HAS_TIME_SPAN",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:9",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:31",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:6"
+          },
+          "end": {
+            "identity": 31,
+            "labels": [
+              "E5_Event"
+            ],
+            "properties": {
+              "name": "Arrival of Reverent F. McDougall and his wife Harriette McDougall in Kuching",
+              "id": "7bf2e0eb-85ff-4a52-afd6-96c1e527f2a4"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:31"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 31,
+        "labels": [
+          "E5_Event"
+        ],
+        "properties": {
+          "name": "Arrival of Reverent F. McDougall and his wife Harriette McDougall in Kuching",
+          "id": "7bf2e0eb-85ff-4a52-afd6-96c1e527f2a4"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:31"
+      },
+      "end": {
+        "identity": 4,
+        "labels": [
+          "E21_Person"
+        ],
+        "properties": {
+          "name": "Harriette McDougall",
+          "id": "5a7e8219-d7d2-403d-b655-0bab7b41ae62"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:4"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 31,
+            "labels": [
+              "E5_Event"
+            ],
+            "properties": {
+              "name": "Arrival of Reverent F. McDougall and his wife Harriette McDougall in Kuching",
+              "id": "7bf2e0eb-85ff-4a52-afd6-96c1e527f2a4"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:31"
+          },
+          "relationship": {
+            "identity": 10,
+            "start": 31,
+            "end": 4,
+            "type": "P11_HAD_PARTICIPANT",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:10",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:31",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:4"
+          },
+          "end": {
+            "identity": 4,
+            "labels": [
+              "E21_Person"
+            ],
+            "properties": {
+              "name": "Harriette McDougall",
+              "id": "5a7e8219-d7d2-403d-b655-0bab7b41ae62"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:4"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 4,
+        "labels": [
+          "E21_Person"
+        ],
+        "properties": {
+          "name": "Harriette McDougall",
+          "id": "5a7e8219-d7d2-403d-b655-0bab7b41ae62"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:4"
+      },
+      "end": {
+        "identity": 31,
+        "labels": [
+          "E5_Event"
+        ],
+        "properties": {
+          "name": "Arrival of Reverent F. McDougall and his wife Harriette McDougall in Kuching",
+          "id": "7bf2e0eb-85ff-4a52-afd6-96c1e527f2a4"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:31"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 4,
+            "labels": [
+              "E21_Person"
+            ],
+            "properties": {
+              "name": "Harriette McDougall",
+              "id": "5a7e8219-d7d2-403d-b655-0bab7b41ae62"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:4"
+          },
+          "relationship": {
+            "identity": 10,
+            "start": 31,
+            "end": 4,
+            "type": "P11_HAD_PARTICIPANT",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:10",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:31",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:4"
+          },
+          "end": {
+            "identity": 31,
+            "labels": [
+              "E5_Event"
+            ],
+            "properties": {
+              "name": "Arrival of Reverent F. McDougall and his wife Harriette McDougall in Kuching",
+              "id": "7bf2e0eb-85ff-4a52-afd6-96c1e527f2a4"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:31"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 31,
+        "labels": [
+          "E5_Event"
+        ],
+        "properties": {
+          "name": "Arrival of Reverent F. McDougall and his wife Harriette McDougall in Kuching",
+          "id": "7bf2e0eb-85ff-4a52-afd6-96c1e527f2a4"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:31"
+      },
+      "end": {
+        "identity": 15,
+        "labels": [
+          "E21_Person"
+        ],
+        "properties": {
+          "name": "Reverend F. McDougall",
+          "id": "5d87822f-1aba-491c-838b-ee0f44ace7ab"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:15"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 31,
+            "labels": [
+              "E5_Event"
+            ],
+            "properties": {
+              "name": "Arrival of Reverent F. McDougall and his wife Harriette McDougall in Kuching",
+              "id": "7bf2e0eb-85ff-4a52-afd6-96c1e527f2a4"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:31"
+          },
+          "relationship": {
+            "identity": 11,
+            "start": 31,
+            "end": 15,
+            "type": "P11_HAD_PARTICIPANT",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:11",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:31",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:15"
+          },
+          "end": {
+            "identity": 15,
+            "labels": [
+              "E21_Person"
+            ],
+            "properties": {
+              "name": "Reverend F. McDougall",
+              "id": "5d87822f-1aba-491c-838b-ee0f44ace7ab"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:15"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 15,
+        "labels": [
+          "E21_Person"
+        ],
+        "properties": {
+          "name": "Reverend F. McDougall",
+          "id": "5d87822f-1aba-491c-838b-ee0f44ace7ab"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:15"
+      },
+      "end": {
+        "identity": 31,
+        "labels": [
+          "E5_Event"
+        ],
+        "properties": {
+          "name": "Arrival of Reverent F. McDougall and his wife Harriette McDougall in Kuching",
+          "id": "7bf2e0eb-85ff-4a52-afd6-96c1e527f2a4"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:31"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 15,
+            "labels": [
+              "E21_Person"
+            ],
+            "properties": {
+              "name": "Reverend F. McDougall",
+              "id": "5d87822f-1aba-491c-838b-ee0f44ace7ab"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:15"
+          },
+          "relationship": {
+            "identity": 11,
+            "start": 31,
+            "end": 15,
+            "type": "P11_HAD_PARTICIPANT",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:11",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:31",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:15"
+          },
+          "end": {
+            "identity": 31,
+            "labels": [
+              "E5_Event"
+            ],
+            "properties": {
+              "name": "Arrival of Reverent F. McDougall and his wife Harriette McDougall in Kuching",
+              "id": "7bf2e0eb-85ff-4a52-afd6-96c1e527f2a4"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:31"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 31,
+        "labels": [
+          "E5_Event"
+        ],
+        "properties": {
+          "name": "Arrival of Reverent F. McDougall and his wife Harriette McDougall in Kuching",
+          "id": "7bf2e0eb-85ff-4a52-afd6-96c1e527f2a4"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:31"
+      },
+      "end": {
+        "identity": 10,
+        "labels": [
+          "E53_Place"
+        ],
+        "properties": {
+          "name": "Kuching",
+          "id": "7eb5ac89-5180-4c7f-9a64-07b46f7812a4"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:10"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 31,
+            "labels": [
+              "E5_Event"
+            ],
+            "properties": {
+              "name": "Arrival of Reverent F. McDougall and his wife Harriette McDougall in Kuching",
+              "id": "7bf2e0eb-85ff-4a52-afd6-96c1e527f2a4"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:31"
+          },
+          "relationship": {
+            "identity": 12,
+            "start": 31,
+            "end": 10,
+            "type": "P7_TOOK_PLACE_AT",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:12",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:31",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:10"
+          },
+          "end": {
+            "identity": 10,
+            "labels": [
+              "E53_Place"
+            ],
+            "properties": {
+              "name": "Kuching",
+              "id": "7eb5ac89-5180-4c7f-9a64-07b46f7812a4"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:10"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 10,
+        "labels": [
+          "E53_Place"
+        ],
+        "properties": {
+          "name": "Kuching",
+          "id": "7eb5ac89-5180-4c7f-9a64-07b46f7812a4"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:10"
+      },
+      "end": {
+        "identity": 31,
+        "labels": [
+          "E5_Event"
+        ],
+        "properties": {
+          "name": "Arrival of Reverent F. McDougall and his wife Harriette McDougall in Kuching",
+          "id": "7bf2e0eb-85ff-4a52-afd6-96c1e527f2a4"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:31"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 10,
+            "labels": [
+              "E53_Place"
+            ],
+            "properties": {
+              "name": "Kuching",
+              "id": "7eb5ac89-5180-4c7f-9a64-07b46f7812a4"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:10"
+          },
+          "relationship": {
+            "identity": 12,
+            "start": 31,
+            "end": 10,
+            "type": "P7_TOOK_PLACE_AT",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:12",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:31",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:10"
+          },
+          "end": {
+            "identity": 31,
+            "labels": [
+              "E5_Event"
+            ],
+            "properties": {
+              "name": "Arrival of Reverent F. McDougall and his wife Harriette McDougall in Kuching",
+              "id": "7bf2e0eb-85ff-4a52-afd6-96c1e527f2a4"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:31"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 36,
+        "labels": [
+          "E22_HumanMadeObject"
+        ],
+        "properties": {
+          "name": "Kuching Tua Pek Kong",
+          "id": "39b48af9-fff7-4a54-8d66-76a1dca10dcb",
+          "type": "building"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:36"
+      },
+      "end": {
+        "identity": 10,
+        "labels": [
+          "E53_Place"
+        ],
+        "properties": {
+          "name": "Kuching",
+          "id": "7eb5ac89-5180-4c7f-9a64-07b46f7812a4"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:10"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 36,
+            "labels": [
+              "E22_HumanMadeObject"
+            ],
+            "properties": {
+              "name": "Kuching Tua Pek Kong",
+              "id": "39b48af9-fff7-4a54-8d66-76a1dca10dcb",
+              "type": "building"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:36"
+          },
+          "relationship": {
+            "identity": 13,
+            "start": 36,
+            "end": 10,
+            "type": "P55_HAS_CURRENT_LOCATION",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:13",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:36",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:10"
+          },
+          "end": {
+            "identity": 10,
+            "labels": [
+              "E53_Place"
+            ],
+            "properties": {
+              "name": "Kuching",
+              "id": "7eb5ac89-5180-4c7f-9a64-07b46f7812a4"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:10"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 10,
+        "labels": [
+          "E53_Place"
+        ],
+        "properties": {
+          "name": "Kuching",
+          "id": "7eb5ac89-5180-4c7f-9a64-07b46f7812a4"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:10"
+      },
+      "end": {
+        "identity": 36,
+        "labels": [
+          "E22_HumanMadeObject"
+        ],
+        "properties": {
+          "name": "Kuching Tua Pek Kong",
+          "id": "39b48af9-fff7-4a54-8d66-76a1dca10dcb",
+          "type": "building"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:36"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 10,
+            "labels": [
+              "E53_Place"
+            ],
+            "properties": {
+              "name": "Kuching",
+              "id": "7eb5ac89-5180-4c7f-9a64-07b46f7812a4"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:10"
+          },
+          "relationship": {
+            "identity": 13,
+            "start": 36,
+            "end": 10,
+            "type": "P55_HAS_CURRENT_LOCATION",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:13",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:36",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:10"
+          },
+          "end": {
+            "identity": 36,
+            "labels": [
+              "E22_HumanMadeObject"
+            ],
+            "properties": {
+              "name": "Kuching Tua Pek Kong",
+              "id": "39b48af9-fff7-4a54-8d66-76a1dca10dcb",
+              "type": "building"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:36"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 40,
+        "labels": [
+          "E5_Event"
+        ],
+        "properties": {
+          "name": "Renovation of Kuching Tua Pek Kong",
+          "id": "719d9cc6-f3b8-448f-94e4-201849d00793"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:40"
+      },
+      "end": {
+        "identity": 9,
+        "labels": [
+          "E52_TimeSpan"
+        ],
+        "properties": {
+          "name": "1856",
+          "id": "cc4d4d6e-1f98-4dd3-9f6f-f605ec673d52"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:9"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 40,
+            "labels": [
+              "E5_Event"
+            ],
+            "properties": {
+              "name": "Renovation of Kuching Tua Pek Kong",
+              "id": "719d9cc6-f3b8-448f-94e4-201849d00793"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:40"
+          },
+          "relationship": {
+            "identity": 14,
+            "start": 40,
+            "end": 9,
+            "type": "P4_HAS_TIME_SPAN",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:14",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:40",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:9"
+          },
+          "end": {
+            "identity": 9,
+            "labels": [
+              "E52_TimeSpan"
+            ],
+            "properties": {
+              "name": "1856",
+              "id": "cc4d4d6e-1f98-4dd3-9f6f-f605ec673d52"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:9"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 9,
+        "labels": [
+          "E52_TimeSpan"
+        ],
+        "properties": {
+          "name": "1856",
+          "id": "cc4d4d6e-1f98-4dd3-9f6f-f605ec673d52"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:9"
+      },
+      "end": {
+        "identity": 40,
+        "labels": [
+          "E5_Event"
+        ],
+        "properties": {
+          "name": "Renovation of Kuching Tua Pek Kong",
+          "id": "719d9cc6-f3b8-448f-94e4-201849d00793"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:40"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 9,
+            "labels": [
+              "E52_TimeSpan"
+            ],
+            "properties": {
+              "name": "1856",
+              "id": "cc4d4d6e-1f98-4dd3-9f6f-f605ec673d52"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:9"
+          },
+          "relationship": {
+            "identity": 14,
+            "start": 40,
+            "end": 9,
+            "type": "P4_HAS_TIME_SPAN",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:14",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:40",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:9"
+          },
+          "end": {
+            "identity": 40,
+            "labels": [
+              "E5_Event"
+            ],
+            "properties": {
+              "name": "Renovation of Kuching Tua Pek Kong",
+              "id": "719d9cc6-f3b8-448f-94e4-201849d00793"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:40"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 40,
+        "labels": [
+          "E5_Event"
+        ],
+        "properties": {
+          "name": "Renovation of Kuching Tua Pek Kong",
+          "id": "719d9cc6-f3b8-448f-94e4-201849d00793"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:40"
+      },
+      "end": {
+        "identity": 36,
+        "labels": [
+          "E22_HumanMadeObject"
+        ],
+        "properties": {
+          "name": "Kuching Tua Pek Kong",
+          "id": "39b48af9-fff7-4a54-8d66-76a1dca10dcb",
+          "type": "building"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:36"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 40,
+            "labels": [
+              "E5_Event"
+            ],
+            "properties": {
+              "name": "Renovation of Kuching Tua Pek Kong",
+              "id": "719d9cc6-f3b8-448f-94e4-201849d00793"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:40"
+          },
+          "relationship": {
+            "identity": 15,
+            "start": 40,
+            "end": 36,
+            "type": "P8_TOOK_PLACE_ON_OR_WITHIN",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:15",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:40",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:36"
+          },
+          "end": {
+            "identity": 36,
+            "labels": [
+              "E22_HumanMadeObject"
+            ],
+            "properties": {
+              "name": "Kuching Tua Pek Kong",
+              "id": "39b48af9-fff7-4a54-8d66-76a1dca10dcb",
+              "type": "building"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:36"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 36,
+        "labels": [
+          "E22_HumanMadeObject"
+        ],
+        "properties": {
+          "name": "Kuching Tua Pek Kong",
+          "id": "39b48af9-fff7-4a54-8d66-76a1dca10dcb",
+          "type": "building"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:36"
+      },
+      "end": {
+        "identity": 40,
+        "labels": [
+          "E5_Event"
+        ],
+        "properties": {
+          "name": "Renovation of Kuching Tua Pek Kong",
+          "id": "719d9cc6-f3b8-448f-94e4-201849d00793"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:40"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 36,
+            "labels": [
+              "E22_HumanMadeObject"
+            ],
+            "properties": {
+              "name": "Kuching Tua Pek Kong",
+              "id": "39b48af9-fff7-4a54-8d66-76a1dca10dcb",
+              "type": "building"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:36"
+          },
+          "relationship": {
+            "identity": 15,
+            "start": 40,
+            "end": 36,
+            "type": "P8_TOOK_PLACE_ON_OR_WITHIN",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:15",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:40",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:36"
+          },
+          "end": {
+            "identity": 40,
+            "labels": [
+              "E5_Event"
+            ],
+            "properties": {
+              "name": "Renovation of Kuching Tua Pek Kong",
+              "id": "719d9cc6-f3b8-448f-94e4-201849d00793"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:40"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 45,
+        "labels": [
+          "E21_Person"
+        ],
+        "properties": {
+          "name": "Test Person",
+          "id": "3227e5d8-1d3c-471f-a924-f61e37ad6e9e"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:45"
+      },
+      "end": {
+        "identity": 46,
+        "labels": [
+          "E21_Person"
+        ],
+        "properties": {
+          "name": "Test Parent",
+          "id": "09613c26-8987-4608-ac5b-e0835fb65fb0"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:46"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 45,
+            "labels": [
+              "E21_Person"
+            ],
+            "properties": {
+              "name": "Test Person",
+              "id": "3227e5d8-1d3c-471f-a924-f61e37ad6e9e"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:45"
+          },
+          "relationship": {
+            "identity": 16,
+            "start": 45,
+            "end": 46,
+            "type": "P152_HAS_PARENT",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:16",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:45",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:46"
+          },
+          "end": {
+            "identity": 46,
+            "labels": [
+              "E21_Person"
+            ],
+            "properties": {
+              "name": "Test Parent",
+              "id": "09613c26-8987-4608-ac5b-e0835fb65fb0"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:46"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 46,
+        "labels": [
+          "E21_Person"
+        ],
+        "properties": {
+          "name": "Test Parent",
+          "id": "09613c26-8987-4608-ac5b-e0835fb65fb0"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:46"
+      },
+      "end": {
+        "identity": 45,
+        "labels": [
+          "E21_Person"
+        ],
+        "properties": {
+          "name": "Test Person",
+          "id": "3227e5d8-1d3c-471f-a924-f61e37ad6e9e"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:45"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 46,
+            "labels": [
+              "E21_Person"
+            ],
+            "properties": {
+              "name": "Test Parent",
+              "id": "09613c26-8987-4608-ac5b-e0835fb65fb0"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:46"
+          },
+          "relationship": {
+            "identity": 16,
+            "start": 45,
+            "end": 46,
+            "type": "P152_HAS_PARENT",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:16",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:45",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:46"
+          },
+          "end": {
+            "identity": 45,
+            "labels": [
+              "E21_Person"
+            ],
+            "properties": {
+              "name": "Test Person",
+              "id": "3227e5d8-1d3c-471f-a924-f61e37ad6e9e"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:45"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 45,
+        "labels": [
+          "E21_Person"
+        ],
+        "properties": {
+          "name": "Test Person",
+          "id": "3227e5d8-1d3c-471f-a924-f61e37ad6e9e"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:45"
+      },
+      "end": {
+        "identity": 47,
+        "labels": [
+          "E53_Place"
+        ],
+        "properties": {
+          "name": "Test Place",
+          "id": "567c6c13-73a3-41bb-ba29-cf90ab74f93d"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:47"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 45,
+            "labels": [
+              "E21_Person"
+            ],
+            "properties": {
+              "name": "Test Person",
+              "id": "3227e5d8-1d3c-471f-a924-f61e37ad6e9e"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:45"
+          },
+          "relationship": {
+            "identity": 17,
+            "start": 45,
+            "end": 47,
+            "type": "P74_HAS_CURRENT_OR_FORMER_RESIDENCE",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:17",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:45",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:47"
+          },
+          "end": {
+            "identity": 47,
+            "labels": [
+              "E53_Place"
+            ],
+            "properties": {
+              "name": "Test Place",
+              "id": "567c6c13-73a3-41bb-ba29-cf90ab74f93d"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:47"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 47,
+        "labels": [
+          "E53_Place"
+        ],
+        "properties": {
+          "name": "Test Place",
+          "id": "567c6c13-73a3-41bb-ba29-cf90ab74f93d"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:47"
+      },
+      "end": {
+        "identity": 45,
+        "labels": [
+          "E21_Person"
+        ],
+        "properties": {
+          "name": "Test Person",
+          "id": "3227e5d8-1d3c-471f-a924-f61e37ad6e9e"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:45"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 47,
+            "labels": [
+              "E53_Place"
+            ],
+            "properties": {
+              "name": "Test Place",
+              "id": "567c6c13-73a3-41bb-ba29-cf90ab74f93d"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:47"
+          },
+          "relationship": {
+            "identity": 17,
+            "start": 45,
+            "end": 47,
+            "type": "P74_HAS_CURRENT_OR_FORMER_RESIDENCE",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:17",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:45",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:47"
+          },
+          "end": {
+            "identity": 45,
+            "labels": [
+              "E21_Person"
+            ],
+            "properties": {
+              "name": "Test Person",
+              "id": "3227e5d8-1d3c-471f-a924-f61e37ad6e9e"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:45"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 45,
+        "labels": [
+          "E21_Person"
+        ],
+        "properties": {
+          "name": "Test Person",
+          "id": "3227e5d8-1d3c-471f-a924-f61e37ad6e9e"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:45"
+      },
+      "end": {
+        "identity": 48,
+        "labels": [
+          "E30_Right"
+        ],
+        "properties": {
+          "name": "Test Right",
+          "id": "83f33701-4b83-4d3f-9ef5-66db50e2638b"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:48"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 45,
+            "labels": [
+              "E21_Person"
+            ],
+            "properties": {
+              "name": "Test Person",
+              "id": "3227e5d8-1d3c-471f-a924-f61e37ad6e9e"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:45"
+          },
+          "relationship": {
+            "identity": 18,
+            "start": 45,
+            "end": 48,
+            "type": "P30_POSSESSES",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:18",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:45",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:48"
+          },
+          "end": {
+            "identity": 48,
+            "labels": [
+              "E30_Right"
+            ],
+            "properties": {
+              "name": "Test Right",
+              "id": "83f33701-4b83-4d3f-9ef5-66db50e2638b"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:48"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  },
+  {
+    "r": {
+      "start": {
+        "identity": 48,
+        "labels": [
+          "E30_Right"
+        ],
+        "properties": {
+          "name": "Test Right",
+          "id": "83f33701-4b83-4d3f-9ef5-66db50e2638b"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:48"
+      },
+      "end": {
+        "identity": 45,
+        "labels": [
+          "E21_Person"
+        ],
+        "properties": {
+          "name": "Test Person",
+          "id": "3227e5d8-1d3c-471f-a924-f61e37ad6e9e"
+        },
+        "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:45"
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 48,
+            "labels": [
+              "E30_Right"
+            ],
+            "properties": {
+              "name": "Test Right",
+              "id": "83f33701-4b83-4d3f-9ef5-66db50e2638b"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:48"
+          },
+          "relationship": {
+            "identity": 18,
+            "start": 45,
+            "end": 48,
+            "type": "P30_POSSESSES",
+            "properties": {},
+            "elementId": "5:aaa95c1e-d296-406f-96b2-c20187dbf4ff:18",
+            "startNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:45",
+            "endNodeElementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:48"
+          },
+          "end": {
+            "identity": 45,
+            "labels": [
+              "E21_Person"
+            ],
+            "properties": {
+              "name": "Test Person",
+              "id": "3227e5d8-1d3c-471f-a924-f61e37ad6e9e"
+            },
+            "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:45"
+          }
+        }
+      ],
+      "length": 1.0
+    }
+  }
+]
