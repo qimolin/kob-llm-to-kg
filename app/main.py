@@ -61,6 +61,12 @@ if __name__ == '__main__':
 
     # OLLAMA
     print("starting with ollama")
-    prompt = f"Given the following text, why is Temple Street called Temple Street? {contents}"
-    response = ollama.generate(model="llama3", prompt=prompt)
-    print(response)
+    prompt = "You are a data scientist working for a company that is building a graph database. Your task is to extract information from data and convert it into a graph database." + \
+            f"Use the following ontology: {ontology}" + \
+            "Pay attention to the type of the properties, if you can't find data for a property set it to null. IMPORTANT: DONT MAKE ANYTHING UP AND DONT ADD ANY EXTRA DATA. If you can't find any data for a node or relationship don't add it." + \
+            f"Only add nodes and relationships that are part of the ontology. If you don't get any relationships in the schema only add nodes. Give the response in json format. This is the data, the title of the text is denoted with 'TITLE=': {contents}"
+    # response = ollama.generate(model="llama3", prompt=prompt)
+    client = Client(host='ollama')
+    from ollama import Client
+    response = client.generate(model="llama3", prompt=prompt)
+    print(response["response"])
