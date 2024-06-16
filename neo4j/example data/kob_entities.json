@@ -1,0 +1,629 @@
+[
+  {
+    "n": {
+      "identity": 0,
+      "labels": [
+        "E21_Person"
+      ],
+      "properties": {
+        "name": "Lau Chek",
+        "id": "d397611b-f260-4121-b967-edca9bda8579"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:0"
+    }
+  },
+  {
+    "n": {
+      "identity": 1,
+      "labels": [
+        "E74_Group"
+      ],
+      "properties": {
+        "name": "Kwong Wai Siew Association",
+        "id": "89e264cc-c5d7-4654-a3d7-cbe4577375e7"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:1"
+    }
+  },
+  {
+    "n": {
+      "identity": 2,
+      "labels": [
+        "E74_Group"
+      ],
+      "properties": {
+        "name": "Brunei nobles",
+        "id": "35b2d074-46e8-45fc-8082-57d7187bc548"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:2"
+    }
+  },
+  {
+    "n": {
+      "identity": 3,
+      "labels": [
+        "E52_TimeSpan"
+      ],
+      "properties": {
+        "name": "1839",
+        "id": "76e2837e-24e9-4c56-9def-606d27ea9c2c"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:3"
+    }
+  },
+  {
+    "n": {
+      "identity": 4,
+      "labels": [
+        "E21_Person"
+      ],
+      "properties": {
+        "name": "Harriette McDougall",
+        "id": "5a7e8219-d7d2-403d-b655-0bab7b41ae62"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:4"
+    }
+  },
+  {
+    "n": {
+      "identity": 5,
+      "labels": [
+        "E5_Event"
+      ],
+      "properties": {
+        "name": "Bau Chinese Revolt",
+        "id": "55003842-a1d3-4934-b52a-3b1873f263b3"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:5"
+    }
+  },
+  {
+    "n": {
+      "identity": 6,
+      "labels": [
+        "E52_TimeSpan"
+      ],
+      "properties": {
+        "name": "1848",
+        "id": "2144efcb-cc65-471d-9e14-9baf0179d58a"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:6"
+    }
+  },
+  {
+    "n": {
+      "identity": 7,
+      "labels": [
+        "E52_TimeSpan"
+      ],
+      "properties": {
+        "name": "1850s",
+        "id": "17a1dba4-1dc8-4aaf-a5a2-70f3b6ccb1a3"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:7"
+    }
+  },
+  {
+    "n": {
+      "identity": 8,
+      "labels": [
+        "E5_Event"
+      ],
+      "properties": {
+        "name": "Arrival of James Brooke and his crew in Kuching",
+        "id": "cb105633-200a-4476-aec5-e3987bd0d0af"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:8"
+    }
+  },
+  {
+    "n": {
+      "identity": 9,
+      "labels": [
+        "E52_TimeSpan"
+      ],
+      "properties": {
+        "name": "1856",
+        "id": "cc4d4d6e-1f98-4dd3-9f6f-f605ec673d52"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:9"
+    }
+  },
+  {
+    "n": {
+      "identity": 10,
+      "labels": [
+        "E53_Place"
+      ],
+      "properties": {
+        "name": "Kuching",
+        "id": "7eb5ac89-5180-4c7f-9a64-07b46f7812a4"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:10"
+    }
+  },
+  {
+    "n": {
+      "identity": 11,
+      "labels": [
+        "E53_Place"
+      ],
+      "properties": {
+        "name": "Kuching Old Bazaar",
+        "id": "e155143d-fe0b-45be-8ee9-cd16ac18f154"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:11"
+    }
+  },
+  {
+    "n": {
+      "identity": 12,
+      "labels": [
+        "E21_Person"
+      ],
+      "properties": {
+        "name": "James Brooke",
+        "id": "ccdbc628-b274-424a-8e49-8477c6fc4e96"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:12"
+    }
+  },
+  {
+    "n": {
+      "identity": 13,
+      "labels": [
+        "E53_Place"
+      ],
+      "properties": {
+        "name": "Malay villages",
+        "id": "c8b24549-4f75-41e9-8490-68c72b2b03f8"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:13"
+    }
+  },
+  {
+    "n": {
+      "identity": 14,
+      "labels": [
+        "E5_Event"
+      ],
+      "properties": {
+        "name": "Arrival of Lau Chek and his compatriots in Kuching",
+        "id": "c9d17e84-06e1-4526-a44d-e14fcde6e109"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:14"
+    }
+  },
+  {
+    "n": {
+      "identity": 15,
+      "labels": [
+        "E21_Person"
+      ],
+      "properties": {
+        "name": "Reverend F. McDougall",
+        "id": "5d87822f-1aba-491c-838b-ee0f44ace7ab"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:15"
+    }
+  },
+  {
+    "n": {
+      "identity": 16,
+      "labels": [
+        "E53_Place"
+      ],
+      "properties": {
+        "name": "Sarawak",
+        "id": "cd31e65a-a368-4a9b-96c0-49b6e2d161cf"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:16"
+    }
+  },
+  {
+    "n": {
+      "identity": 19,
+      "labels": [
+        "E53_Place"
+      ],
+      "properties": {
+        "name": "Chinese bazaar",
+        "id": "068aa73f-b08d-4a71-9e42-891cfb62fb00"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:19"
+    }
+  },
+  {
+    "n": {
+      "identity": 20,
+      "labels": [
+        "E53_Place"
+      ],
+      "properties": {
+        "name": "Kling bazaar",
+        "id": "c872f7fe-7a94-4b24-b6cc-826a4ce8d2dc"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:20"
+    }
+  },
+  {
+    "n": {
+      "identity": 21,
+      "labels": [
+        "E53_Place"
+      ],
+      "properties": {
+        "name": "Gambier Street",
+        "id": "ddebed00-30c6-4e5f-bc34-0a16c9a777c2"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:21"
+    }
+  },
+  {
+    "n": {
+      "identity": 22,
+      "labels": [
+        "E53_Place"
+      ],
+      "properties": {
+        "name": "Indian Street",
+        "id": "28e83357-34de-4f28-8ad5-642e80316165"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:22"
+    }
+  },
+  {
+    "n": {
+      "identity": 23,
+      "labels": [
+        "E53_Place"
+      ],
+      "properties": {
+        "name": "New Bazaar",
+        "id": "ca8401b7-acce-4f6c-87fb-41e21a808791"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:23"
+    }
+  },
+  {
+    "n": {
+      "identity": 24,
+      "labels": [
+        "E53_Place"
+      ],
+      "properties": {
+        "name": "Bau bazaar",
+        "id": "e7201149-fc3d-45f1-877d-84f6ea021cef"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:24"
+    }
+  },
+  {
+    "n": {
+      "identity": 25,
+      "labels": [
+        "E53_Place"
+      ],
+      "properties": {
+        "name": "Chinese settlements",
+        "id": "1bc8fa38-ab31-4343-a20c-32d69579c660"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:25"
+    }
+  },
+  {
+    "n": {
+      "identity": 26,
+      "labels": [
+        "E53_Place"
+      ],
+      "properties": {
+        "name": "Kuching Chinese Bazaar",
+        "id": "58421574-06a6-4ad3-9313-66c57b9bd69e"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:26"
+    }
+  },
+  {
+    "n": {
+      "identity": 27,
+      "labels": [
+        "E53_Place"
+      ],
+      "properties": {
+        "name": "White Rajah Kingdom",
+        "id": "731f1e7d-65a7-4f7f-871e-d22140336578"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:27"
+    }
+  },
+  {
+    "n": {
+      "identity": 28,
+      "labels": [
+        "E74_Group"
+      ],
+      "properties": {
+        "name": "Chinese migrants",
+        "id": "979a297d-a4b3-4eea-83ab-206022a3b786"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:28"
+    }
+  },
+  {
+    "n": {
+      "identity": 29,
+      "labels": [
+        "E22_HumanMadeObject"
+      ],
+      "properties": {
+        "name": "Tua Pek Kong",
+        "id": "8c723921-bd7b-498f-bea4-c04c34634b79",
+        "type": "building"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:29"
+    }
+  },
+  {
+    "n": {
+      "identity": 30,
+      "labels": [
+        "E22_HumanMadeObject"
+      ],
+      "properties": {
+        "name": "Ancient Belian wood tombstones",
+        "id": "d73cde93-3e75-4bab-9559-a4aca3483718",
+        "type": "artifact"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:30"
+    }
+  },
+  {
+    "n": {
+      "identity": 31,
+      "labels": [
+        "E5_Event"
+      ],
+      "properties": {
+        "name": "Arrival of Reverent F. McDougall and his wife Harriette McDougall in Kuching",
+        "id": "7bf2e0eb-85ff-4a52-afd6-96c1e527f2a4"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:31"
+    }
+  },
+  {
+    "n": {
+      "identity": 32,
+      "labels": [
+        "E74_Group"
+      ],
+      "properties": {
+        "name": "Hakka miners",
+        "id": "55349dc4-32dc-4b55-b31e-22f9f56507fa"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:32"
+    }
+  },
+  {
+    "n": {
+      "identity": 33,
+      "labels": [
+        "E53_Place"
+      ],
+      "properties": {
+        "name": "Bau",
+        "id": "a851816a-2fd7-44fe-ba9b-f18849669177"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:33"
+    }
+  },
+  {
+    "n": {
+      "identity": 34,
+      "labels": [
+        "E74_Group"
+      ],
+      "properties": {
+        "name": "Chinese traders",
+        "id": "7a0ebbdb-3af7-4834-bdc4-c06c17b3fd44"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:34"
+    }
+  },
+  {
+    "n": {
+      "identity": 35,
+      "labels": [
+        "E74_Group"
+      ],
+      "properties": {
+        "name": "Bau Chinese",
+        "id": "90e3b8c8-c602-41fc-9497-b6f5dceca354"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:35"
+    }
+  },
+  {
+    "n": {
+      "identity": 36,
+      "labels": [
+        "E22_HumanMadeObject"
+      ],
+      "properties": {
+        "name": "Kuching Tua Pek Kong",
+        "id": "39b48af9-fff7-4a54-8d66-76a1dca10dcb",
+        "type": "building"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:36"
+    }
+  },
+  {
+    "n": {
+      "identity": 37,
+      "labels": [
+        "E74_Group"
+      ],
+      "properties": {
+        "name": "Kuching Chinese",
+        "id": "687d34db-f1e8-4c66-802f-dbe1705cc5f9"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:37"
+    }
+  },
+  {
+    "n": {
+      "identity": 38,
+      "labels": [
+        "E74_Group"
+      ],
+      "properties": {
+        "name": "Rajah government",
+        "id": "f04ccf45-d052-44d8-86b6-a17bb2bb76ea"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:38"
+    }
+  },
+  {
+    "n": {
+      "identity": 39,
+      "labels": [
+        "E74_Group"
+      ],
+      "properties": {
+        "name": "Rajah's forces",
+        "id": "61a40ed3-1e11-4ac8-8ee8-3891e033ba4d"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:39"
+    }
+  },
+  {
+    "n": {
+      "identity": 40,
+      "labels": [
+        "E5_Event"
+      ],
+      "properties": {
+        "name": "Renovation of Kuching Tua Pek Kong",
+        "id": "719d9cc6-f3b8-448f-94e4-201849d00793"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:40"
+    }
+  },
+  {
+    "n": {
+      "identity": 41,
+      "labels": [
+        "E5_Event"
+      ],
+      "properties": {
+        "name": "Bau miners massacre",
+        "id": "94829484-17bc-4c66-bdfa-8aca775ed5bf"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:41"
+    }
+  },
+  {
+    "n": {
+      "identity": 42,
+      "labels": [
+        "E52_TimeSpan"
+      ],
+      "properties": {
+        "name": "1883",
+        "id": "f17c3f04-0a82-4efa-80eb-72148fea2b25"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:42"
+    }
+  },
+  {
+    "n": {
+      "identity": 44,
+      "labels": [
+        "E21_Person"
+      ],
+      "properties": {
+        "name": "Charles Brooke",
+        "id": "3f0c8b8d-7c36-4bdd-9537-90f82cdb196e"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:44"
+    }
+  },
+  {
+    "n": {
+      "identity": 45,
+      "labels": [
+        "E21_Person"
+      ],
+      "properties": {
+        "name": "Test Person",
+        "id": "3227e5d8-1d3c-471f-a924-f61e37ad6e9e"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:45"
+    }
+  },
+  {
+    "n": {
+      "identity": 46,
+      "labels": [
+        "E21_Person"
+      ],
+      "properties": {
+        "name": "Test Parent",
+        "id": "09613c26-8987-4608-ac5b-e0835fb65fb0"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:46"
+    }
+  },
+  {
+    "n": {
+      "identity": 47,
+      "labels": [
+        "E53_Place"
+      ],
+      "properties": {
+        "name": "Test Place",
+        "id": "567c6c13-73a3-41bb-ba29-cf90ab74f93d"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:47"
+    }
+  },
+  {
+    "n": {
+      "identity": 48,
+      "labels": [
+        "E30_Right"
+      ],
+      "properties": {
+        "name": "Test Right",
+        "id": "83f33701-4b83-4d3f-9ef5-66db50e2638b"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:48"
+    }
+  },
+  {
+    "n": {
+      "identity": 49,
+      "labels": [
+        "E52_TimeSpan"
+      ],
+      "properties": {
+        "name": "1830",
+        "id": "d7a2ac16-fec3-4f16-98c5-5a8359cdfdae"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:49"
+    }
+  },
+  {
+    "n": {
+      "identity": 50,
+      "labels": [
+        "E52_TimeSpan"
+      ],
+      "properties": {
+        "name": "1820s",
+        "id": "f356e4e5-8709-4b69-bcf1-1ec185f31d22"
+      },
+      "elementId": "4:aaa95c1e-d296-406f-96b2-c20187dbf4ff:50"
+    }
+  }
+]
