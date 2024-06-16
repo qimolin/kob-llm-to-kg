@@ -180,3 +180,33 @@ Based on the provided text, here are the nodes and relationships that can be ext
 4. **Green Hill was built in the 1970s** (no specific ontology relationship)
 
 Note that there are no relationships mentioned between Green Hill and other nodes, so only nodes are extracted for this part of the text.
+
+# CASE 5
+## IN
+f"You are a data scientist working for a company that is building a knowledge graph about Kuching Old Bazaar. Your task is to extract information from a text about {title} and convert it into a graph database. " + \
+f"Use the following ontology: {ontology}, returning a set of nodes and relationships." + \
+"For a node, give the name of the node and its type according to the ontology, according to the following format: NAME, NODE_TYPE." + \
+"For a relationship, give the name of the first node, the name of the second node, and the relationship type according to the ontology according to the following format: NODE1, NODE2, RELAIONSHIP_TYPE " + \
+"IMPORTANT: DO NOT MAKE UP ANYTHING AND DO NOT ADD ANY EXTRA DATA THAT IS NOT SPECIFICALLY GIVEN IN THE TEXT." + \
+"Only add nodes and relationships that are part of the ontology, if you cannot find any relationships in the text, only return nodes." + \
+f"This is the text from which you should extract the nodes and relationships, the title of the text is denoted with 'TITLE=': {contents}"
+
+## OUT
+Based on the provided text, here are the nodes and relationships that can be extracted:
+
+Nodes:
+1. Tua Pek Kong Temple, crm:E39_Actor
+2. Reservoir Park, crm:E39_Actor
+3. Thompson Road, crm:E39_Actor (now known as Jalan Tunku Abdul Rahman)
+4. Sungai Kuching, crm:E39_Actor (the original Kuching river)
+5. Sungai Sarawak, crm:E39_Actor
+6. Temple Street, crm:E39_Actor
+7. Green Hill, crm:E39_Actor
+
+Relationships:
+1. Tua Pek Kong Temple, Temple Street, crm:P180i_was_currency_of (the temple is located at the start of the street)
+2. Sungai Kuching, Reservoir Park, crm:P182_ends_before_or_with_the_start_of (the river used to flow from the park)
+3. Sungai Kuching, Tua Pek Kong Temple, crm:P183_ends_before_the_start_of (the river flowed through the temple)
+4. Sungai Kuching, Sungai Sarawak, crm:P184_ends_before_or_with_the_end_of (the river emptied into the Sarawak river)
+
+Note: The relationships are based on the text and may not be exhaustive or accurate in terms of their semantic meaning
