@@ -46,6 +46,8 @@ def check_if_in_ontology(ontology: dict, check: str) -> bool:
     if check in ontology["@context"]:
         return True
 
+    # TODO: only look at name not at ID, get ID yourself
+
     print("ERROR: did not find", check, "in ontology, skipping")
     return False
     # assert False TODO: remove?
@@ -59,7 +61,9 @@ def output_to_csv(res: str, ontology: dict) -> str:
     reading_nodes = False
     reading_relationships = False
     for line in res.split("\n"):
-        if line.startswith("Nodes"):
+        line = line.strip("*")
+        print(line, reading_nodes)
+        if line.startswith("Nodes"): # TODO: regex
             reading_nodes = True
             reading_relationships = False
             continue
@@ -69,7 +73,7 @@ def output_to_csv(res: str, ontology: dict) -> str:
             reading_relationships = True
             continue
 
-        if line.strip() == "" or line.startswith("Note"):
+        if line.startswith("Note"):
             reading_nodes = False
             reading_relationships = False
             continue
@@ -80,8 +84,11 @@ def output_to_csv(res: str, ontology: dict) -> str:
             continue
 
         if reading_nodes:
-            name = line[0].strip()
-            label = line[1].split("(")[0].split(":")[1].strip()
+            try:
+                name = line[0].strip()
+                label = line[1].split("(")[0].split(":")[1].strip()
+            except IndexError:
+                continue
             if name in nodes:
                 assert nodes[name]["label"] == label
             else:
@@ -89,10 +96,13 @@ def output_to_csv(res: str, ontology: dict) -> str:
                 nodes[name] = { "id": id_counter, "label": label }
                 id_counter += 1 # TODO: fix this
         elif reading_relationships:
-            name1 = line[0].strip()
-            name2 = line[1].strip()
-            if not (name1 in nodes and name2 in nodes): continue
-            label = line[2].split("(")[0].split(":")[1].strip()
+            try:
+                name1 = line[0].strip()
+                name2 = line[1].strip()
+                if not (name1 in nodes and name2 in nodes): continue
+                label = line[2].split("(")[0].split(":")[1].strip()
+            except IndexError:
+                continue
             check_if_in_ontology(ontology, label)
             relationships.add((name1, name2, label))
 
@@ -123,22 +133,42 @@ if __name__ == '__main__':
         print(contents)
         f.write(contents.strip())
 
+    with open("./ontology.json", "r") as f:
+        ontology = json.loads(f.read())
+
     with open("./ontology_without_money.json", "r") as f:
         ontology_without_money = json.loads(f.read())
 
-    with open("./ontology.json", "r") as f:
-        ontology = json.loads(f.read())
     # OLLAMA
     print("starting with ollama")
     title = "Temple Street / Green Hill"
     prompt = f"You are a data scientist working for a company that is building a knowledge graph about Kuching Old Bazaar. Your task is to extract information from a text about {title} and convert it into a graph database. " + \
             f"Use the following ontology: {ontology}, returning a set of nodes and relationships." + \
-            "For a node, give the name of the node and its type according to the ontology, according to the following format: NAME, NODE_TYPE." + \
-            "For a relationship, give the name of the first node, the name of the second node, and the relationship type according to the ontology according to the following format: NODE1, NODE2, RELAIONSHIP_TYPE " + \
+            "For a node, give the name of the node and its type according to the ontology, according to the following format: NAME, crm:NODE_TYPE." + \
+            "For a relationship, give the name of the first node, the name of the second node, and the relationship type according to the ontology according to the following format: NODE1, NODE2, crm:RELAIONSHIP_TYPE " + \
             "IMPORTANT: DO NOT MAKE UP ANYTHING AND DO NOT ADD ANY EXTRA DATA THAT IS NOT SPECIFICALLY GIVEN IN THE TEXT." + \
             "Only add nodes and relationships that are part of the ontology, if you cannot find any relationships in the text, only return nodes." + \
             f"This is the text from which you should extract the nodes and relationships, the title of the text is denoted with 'TITLE=': {contents}"    # prompt = f"You are a data scientist working for a company that is building a graph database. Your task is to extract information from data about {title} and convert it into a graph database. " + \
-    response = ollama.generate(model="llama3", prompt=prompt)
+    response = ollama.generate(model="llama3", prompt=prompt)["response"]
+    print(response)
+
+#     response = """After analyzing the text, I found the following nodes and relationships:
+
+# **Nodes:**
+
+# 1. Wayang Street, crm:E52_Temporal_Entity
+# 2. Hua Xiang Street, crm:E52_Temporal_Entity
+# 3. Hong San Si Temple, crm:E22_Man_Made_Thing
+# 4. Malaysia, crm:E39_Social_Event (note: this is not a direct match, but I assume "Malay" refers to the Malaysian ethnicity)
+
+# **Relationships:**
+
+# 1. Wayang Street, Hua Xiang Street, crm:P9_consists_of (the street has an alternative name)
+# 2. Wayang Street, Hong San Si Temple, crm:P46_is_location_of (the temple is located on the street)
+# 3. Wayang Street, Malaysia, crm:P7_was_influenced_by (the Malay ethnicity had an influence on the street's culture)
+
+# Please note that I did not create any new nodes or relationships outside of what was explicitly mentioned in the text.
+# """
 
     csv_str = output_to_csv(response, ontology_without_money)
     with open(f"./outputs/{page_name}.csv", "w+") as f:
@@ -147,4 +177,3 @@ if __name__ == '__main__':
     # from ollama import Client
     # client = Client(host='ollama')
     # response = client.generate(model="llama3", prompt=prompt)
-    print(response["response"])

@@ -192,6 +192,7 @@ f"Use the following ontology: {ontology}, returning a set of nodes and relations
 f"This is the text from which you should extract the nodes and relationships, the title of the text is denoted with 'TITLE=': {contents}"
 
 ## OUT
+### TEMPLE STREET
 Based on the provided text, here are the nodes and relationships that can be extracted:
 
 Nodes:
@@ -210,3 +211,69 @@ Relationships:
 4. Sungai Kuching, Sungai Sarawak, crm:P184_ends_before_or_with_the_end_of (the river emptied into the Sarawak river)
 
 Note: The relationships are based on the text and may not be exhaustive or accurate in terms of their semantic meaning
+
+### WAYANG STREET
+Based on the provided text, here are the nodes and relationships that can be extracted:
+
+Nodes:
+1. Wayang Street, STREET
+2. Hua Xiang Street, STREET
+3. Hong San Si Temple, TEMPLE
+4. Hokkien, ETHNIC_GROUP
+5. Malay villagers, ETHNIC_GROUP
+
+Relationships:
+1. Hong San Si Temple, is located on, Wayang Street
+2. Hokkien opera, was performed at, stage set up opposite Hong San Si Temple
+3. Malay audience, watched, Hokkien opera
+4. Hua Xiang Street, is also known as, Wayang Street
+5. Cow Dung Street, has unofficially been referred to as, Wayang Street
+
+# CASE 6
+## IN (ONTOLOGY WITHOUT MONEY)
+f"You are a data scientist working for a company that is building a knowledge graph about Kuching Old Bazaar. Your task is to extract information from a text about {title} and convert it into a graph database. " + \
+f"Use the following ontology: {ontology}, returning a set of nodes and relationships." + \
+"For a node, give the name of the node and its type according to the ontology, according to the following format: NAME, NODE_TYPE." + \
+"For a relationship, give the name of the first node, the name of the second node, and the relationship type according to the ontology according to the following format: NODE1, NODE2, RELAIONSHIP_TYPE " + \
+"IMPORTANT: DO NOT MAKE UP ANYTHING AND DO NOT ADD ANY EXTRA DATA THAT IS NOT SPECIFICALLY GIVEN IN THE TEXT." + \
+"Only add nodes and relationships that are part of the ontology, if you cannot find any relationships in the text, only return nodes." + \
+f"This is the text from which you should extract the nodes and relationships, the title of the text is denoted with 'TITLE=': {contents}"
+
+## OUT
+Based on the provided text, I extracted the following nodes and relationships according to the ontology:
+
+Nodes:
+1. Tua Pek Kong Temple, PLACE
+2. Sungai Kuching, THING
+3. Reservoir Park, PLACE
+4. Thompson Road, THING (now known as Jalan Tunku Abdul Rahman)
+5. Chinese Chamber of Commerce, ORGANIZATION
+6. Sarawak, GROUNDED ENTITY
+7. Temple Street, STREET
+8. Green Hill, STREET
+9. Bukit Mata Kuching, MOUNTAIN
+
+Relationships:
+1. Sungai Kuching, Temple Street, P183_ends_before_the_start_of (The river used to flow from what is now the Reservoir Park, along Thompson Road, through the Tua Pek Kong Temple and into Sungai Sarawak.)
+2. Tua Pek Kong Temple, Temple Street, P195_was_a_presence_of (The start of the street is where the iconic Tua Pek Kong Temple is located.)
+
+Note: Since there are no explicit relationships mentioned in the text, only two nodes are extracted as per the instructions.
+
+# CASE 7
+## IN
+
+## OUT
+**Nodes:**
+
+1. Wayang Street, crm:E52_Temporal_Entity
+2. Hua Xiang Street, crm:E52_Temporal_Entity
+3. Hong San Si Temple, crm:E22_Man_Made_Thing
+4. Malaysia, crm:E39_Social_Event (note: this is not a direct match, but I assume "Malay" refers to the Malaysian ethnicity)
+
+**Relationships:**
+
+1. Wayang Street, Hua Xiang Street, crm:P9_consists_of (the street has an alternative name)
+2. Wayang Street, Hong San Si Temple, crm:P46_is_location_of (the temple is located on the street)
+3. Wayang Street, Malaysia, crm:P7_was_influenced_by (the Malay ethnicity had an influence on the street's culture)
+
+Please note that I did not create any new nodes or relationships outside of what was explicitly mentioned in the text.
