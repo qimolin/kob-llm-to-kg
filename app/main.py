@@ -110,7 +110,7 @@ def output_to_csv(res: str, ontology: dict) -> str:
 
 
 if __name__ == '__main__':
-    url = "https://kcholdbazaar.com/040-temple-street-green-hill/"
+    url = "https://kcholdbazaar.com/039-wayang-street/"
     try:
         res = get_url(url)
     except HTTPError:
@@ -124,32 +124,27 @@ if __name__ == '__main__':
         f.write(contents.strip())
 
     with open("./ontology_without_money.json", "r") as f:
+        ontology_without_money = json.loads(f.read())
+
+    with open("./ontology.json", "r") as f:
         ontology = json.loads(f.read())
     # OLLAMA
     print("starting with ollama")
     title = "Temple Street / Green Hill"
     prompt = f"You are a data scientist working for a company that is building a knowledge graph about Kuching Old Bazaar. Your task is to extract information from a text about {title} and convert it into a graph database. " + \
-        f"Use the following ontology: {ontology}, returning a set of nodes and relationships." + \
-        "For a node, give the name of the node and its type according to the ontology, according to the following format: NAME, NODE_TYPE." + \
-        "For a relationship, give the name of the first node, the name of the second node, and the relationship type according to the ontology according to the following format: NODE1, NODE2, RELAIONSHIP_TYPE " + \
-        "IMPORTANT: DO NOT MAKE UP ANYTHING AND DO NOT ADD ANY EXTRA DATA THAT IS NOT SPECIFICALLY GIVEN IN THE TEXT." + \
-        "Only add nodes and relationships that are part of the ontology, if you cannot find any relationships in the text, only return nodes." + \
-        f"This is the text from which you should extract the nodes and relationships, the title of the text is denoted with 'TITLE=': {contents}"
-    # prompt = f"You are a data scientist working for a company that is building a graph database. Your task is to extract information from data about {title} and convert it into a graph database. " + \
-    #         f"Use the following ontology: {ontology}. " + \
-    #         "Return the database in csv form with as header '_id,_labels,id,name,type,_start,_end,_type', using the following template: " + \
-    #         "for nodes: 'ID, :NODE_TYPE, ID, name, , , ,'" + \
-    #         "for relationships: ',,,,,ID,ID,RELATIONSHIP_TYPE'" + \
-    #         "Do not include these examples in the result, only use the text given at the end. " + \
-    #         "Pay attention to the type of the properties, if you can't find data for a property set it to null. IMPORTANT: DONT MAKE ANYTHING UP AND DONT ADD ANY EXTRA DATA. If you can't find any data for a node or relationship don't add it. " + \
-    #         f"Only add nodes and relationships that are part of the ontology. If you don't get any relationships in the schema only add nodes. Give the response in csv format as given above. This is the data, the title of the text is denoted with 'TITLE=': {contents}"
-    # response = ollama.generate(model="llama3", prompt=prompt)
-    
-    csv_str = output_to_csv(response, ontology)
+            f"Use the following ontology: {ontology}, returning a set of nodes and relationships." + \
+            "For a node, give the name of the node and its type according to the ontology, according to the following format: NAME, NODE_TYPE." + \
+            "For a relationship, give the name of the first node, the name of the second node, and the relationship type according to the ontology according to the following format: NODE1, NODE2, RELAIONSHIP_TYPE " + \
+            "IMPORTANT: DO NOT MAKE UP ANYTHING AND DO NOT ADD ANY EXTRA DATA THAT IS NOT SPECIFICALLY GIVEN IN THE TEXT." + \
+            "Only add nodes and relationships that are part of the ontology, if you cannot find any relationships in the text, only return nodes." + \
+            f"This is the text from which you should extract the nodes and relationships, the title of the text is denoted with 'TITLE=': {contents}"    # prompt = f"You are a data scientist working for a company that is building a graph database. Your task is to extract information from data about {title} and convert it into a graph database. " + \
+    response = ollama.generate(model="llama3", prompt=prompt)
+
+    csv_str = output_to_csv(response, ontology_without_money)
     with open(f"./outputs/{page_name}.csv", "w+") as f:
         f.write(csv_str)
 
     # from ollama import Client
     # client = Client(host='ollama')
     # response = client.generate(model="llama3", prompt=prompt)
-    # print(response["response"])
+    print(response["response"])
