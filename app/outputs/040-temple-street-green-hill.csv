@@ -1,12 +1,8 @@
 _id,_labels,id,name,type,_start,_end,_type
-1,:E39_Actor,1,Tua Pek Kong Temple,,,,
-2,:E39_Actor,2,Reservoir Park,,,,
-3,:E39_Actor,3,Thompson Road,,,,
-4,:E39_Actor,4,Sungai Kuching,,,,
-5,:E39_Actor,5,Sungai Sarawak,,,,
-6,:E39_Actor,6,Temple Street,,,,
-7,:E39_Actor,7,Green Hill,,,,
-,,,,,4,1,P183_ends_before_the_start_of
-,,,,,4,2,P182_ends_before_or_with_the_start_of
-,,,,,4,5,P184_ends_before_or_with_the_end_of
-,,,,,1,6,P180i_was_currency_of
+1,:E53_Place,1,Temple Street,,,,
+2,:E53_Place,2,Green Hill,,,,
+3,:E53_Place,3,Reservoir Park,,,,
+4,:E53_Place,4,Thompson Road,,,,
+5,:E53_Place,5,Tua Pek Kong Temple,,,,
+,,,,,1,5,P195_was_a_presence_of
+,,,,,1,4,P182i_starts_after_or_with_the_end_of
