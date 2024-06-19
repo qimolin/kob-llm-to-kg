@@ -42,15 +42,17 @@ def get_contents(res: Response) -> str:
     return contents
 
 
-def check_if_in_ontology(ontology: dict, check: str) -> bool:
+def check_if_in_ontology(ontology: dict, check: str) -> str | None:
     if check in ontology["@context"]:
-        return True
+        return check
 
-    # TODO: only look at name not at ID, get ID yourself
+    check_without_id = "_".join(check.split("_")[1:])
+    for k in ontology["@context"]:
+        if "_".join(k.split("_")[1:]) == check_without_id:
+            return k
 
     print("ERROR: did not find", check, "in ontology, skipping")
-    return False
-    # assert False TODO: remove?
+    return None
 
 
 def output_to_csv(res: str, ontology: dict) -> str:
@@ -63,12 +65,12 @@ def output_to_csv(res: str, ontology: dict) -> str:
     for line in res.split("\n"):
         line = line.strip("*")
         print(line, reading_nodes)
-        if line.startswith("Nodes"): # TODO: regex
+        if re.fullmatch(r"[^\w]*Nodes[^\w]*", line):
             reading_nodes = True
             reading_relationships = False
             continue
 
-        if line.startswith("Relationships"):
+        if re.fullmatch(r"[^\w]*Relationships[^\w]*", line):
             reading_nodes = False
             reading_relationships = True
             continue
@@ -78,32 +80,29 @@ def output_to_csv(res: str, ontology: dict) -> str:
             reading_relationships = False
             continue
 
-        try:
-            line = line.split(".")[1].split(",")
-        except IndexError:
-            continue
-
         if reading_nodes:
-            try:
-                name = line[0].strip()
-                label = line[1].split("(")[0].split(":")[1].strip()
-            except IndexError:
-                continue
+            m = re.match(r"[0-9]\. *(.+), *crm:([^\s]+) *(\(.*\))*", line)
+            if m is None: continue
+            name = m.group(1)
+            label = m.group(2)
+
             if name in nodes:
                 assert nodes[name]["label"] == label
             else:
-                if not check_if_in_ontology(ontology, label): continue
+                label = check_if_in_ontology(ontology, label)
+                if label is None: continue
                 nodes[name] = { "id": id_counter, "label": label }
                 id_counter += 1 # TODO: fix this
         elif reading_relationships:
-            try:
-                name1 = line[0].strip()
-                name2 = line[1].strip()
-                if not (name1 in nodes and name2 in nodes): continue
-                label = line[2].split("(")[0].split(":")[1].strip()
-            except IndexError:
-                continue
-            check_if_in_ontology(ontology, label)
+            m = re.match(r"[0-9]\. *(.+), *(.+), *crm:([^\s]+) *(\(.*\))*", line)
+            if m is None: continue
+            name1 = m.group(1)
+            name2 = m.group(2)
+            label = m.group(3)
+
+            if not (name1 in nodes and name2 in nodes): continue
+            label = check_if_in_ontology(ontology, label)
+            if label is None: continue
             relationships.add((name1, name2, label))
 
     csv = "_id,_labels,id,name,type,_start,_end,_type\n"
@@ -146,29 +145,11 @@ if __name__ == '__main__':
             f"Use the following ontology: {ontology}, returning a set of nodes and relationships." + \
             "For a node, give the name of the node and its type according to the ontology, according to the following format: NAME, crm:NODE_TYPE." + \
             "For a relationship, give the name of the first node, the name of the second node, and the relationship type according to the ontology according to the following format: NODE1, NODE2, crm:RELAIONSHIP_TYPE " + \
-            "IMPORTANT: DO NOT MAKE UP ANYTHING AND DO NOT ADD ANY EXTRA DATA THAT IS NOT SPECIFICALLY GIVEN IN THE TEXT." + \
+            "IMPORTANT: DO NOT MAKE UP ANYTHING AND DO NOT ADD ANY EXTRA DATA THAT IS NOT SPECIFICALLY GIVEN IN THE TEXT. ALSO DO NOT MAKE UP OR USE THINGS THAT ARE NOT IN THE GIVEN ONTOLOGY. " + \
             "Only add nodes and relationships that are part of the ontology, if you cannot find any relationships in the text, only return nodes." + \
             f"This is the text from which you should extract the nodes and relationships, the title of the text is denoted with 'TITLE=': {contents}"    # prompt = f"You are a data scientist working for a company that is building a graph database. Your task is to extract information from data about {title} and convert it into a graph database. " + \
     response = ollama.generate(model="llama3", prompt=prompt)["response"]
     print(response)
-
-#     response = """After analyzing the text, I found the following nodes and relationships:
-
-# **Nodes:**
-
-# 1. Wayang Street, crm:E52_Temporal_Entity
-# 2. Hua Xiang Street, crm:E52_Temporal_Entity
-# 3. Hong San Si Temple, crm:E22_Man_Made_Thing
-# 4. Malaysia, crm:E39_Social_Event (note: this is not a direct match, but I assume "Malay" refers to the Malaysian ethnicity)
-
-# **Relationships:**
-
-# 1. Wayang Street, Hua Xiang Street, crm:P9_consists_of (the street has an alternative name)
-# 2. Wayang Street, Hong San Si Temple, crm:P46_is_location_of (the temple is located on the street)
-# 3. Wayang Street, Malaysia, crm:P7_was_influenced_by (the Malay ethnicity had an influence on the street's culture)
-
-# Please note that I did not create any new nodes or relationships outside of what was explicitly mentioned in the text.
-# """
 
     csv_str = output_to_csv(response, ontology_without_money)
     with open(f"./outputs/{page_name}.csv", "w+") as f:
