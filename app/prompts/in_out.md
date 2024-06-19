@@ -261,6 +261,13 @@ Note: Since there are no explicit relationships mentioned in the text, only two 
 
 # CASE 7
 ## IN
+f"You are a data scientist working for a company that is building a knowledge graph about Kuching Old Bazaar. Your task is to extract information from a text about {title} and convert it into a graph database. " + \
+f"Use the following ontology: {ontology}, returning a set of nodes and relationships." + \
+"For a node, give the name of the node and its type according to the ontology, according to the following format: NAME, crm:NODE_TYPE." + \
+"For a relationship, give the name of the first node, the name of the second node, and the relationship type according to the ontology according to the following format: NODE1, NODE2, crm:RELAIONSHIP_TYPE " + \
+"IMPORTANT: DO NOT MAKE UP ANYTHING AND DO NOT ADD ANY EXTRA DATA THAT IS NOT SPECIFICALLY GIVEN IN THE TEXT. " + \
+"Only add nodes and relationships that are part of the ontology, if you cannot find any relationships in the text, only return nodes." + \
+f"This is the text from which you should extract the nodes and relationships, the title of the text is denoted with 'TITLE=': {contents}
 
 ## OUT
 **Nodes:**
@@ -277,3 +284,96 @@ Note: Since there are no explicit relationships mentioned in the text, only two 
 3. Wayang Street, Malaysia, crm:P7_was_influenced_by (the Malay ethnicity had an influence on the street's culture)
 
 Please note that I did not create any new nodes or relationships outside of what was explicitly mentioned in the text.
+
+# CASE 7
+## IN
+f"You are a data scientist working for a company that is building a knowledge graph about Kuching Old Bazaar. Your task is to extract information from a text about {title} and convert it into a graph database. " + \
+f"Use the following ontology: {ontology}, returning a set of nodes and relationships." + \
+"For a node, give the name of the node and its type according to the ontology, according to the following format: NAME, crm:NODE_TYPE." + \
+"For a relationship, give the name of the first node, the name of the second node, and the relationship type according to the ontology according to the following format: NODE1, NODE2, crm:RELAIONSHIP_TYPE " + \
+"IMPORTANT: DO NOT MAKE UP ANYTHING AND DO NOT ADD ANY EXTRA DATA THAT IS NOT SPECIFICALLY GIVEN IN THE TEXT. " + \
+"Only add nodes and relationships that are part of the ontology, if you cannot find any relationships in the text, only return nodes." + \
+f"This is the text from which you should extract the nodes and relationships, the title of the text is denoted with 'TITLE=': {contents}
+
+## OUT
+**Nodes:**
+
+1. Wayang Street, crm:E52_Temporal_Entity
+2. Hua Xiang Street, crm:E52_Temporal_Entity
+3. Hong San Si Temple, crm:E22_Man_Made_Thing
+4. Malaysia, crm:E39_Social_Event (note: this is not a direct match, but I assume "Malay" refers to the Malaysian ethnicity)
+
+**Relationships:**
+
+1. Wayang Street, Hua Xiang Street, crm:P9_consists_of (the street has an alternative name)
+2. Wayang Street, Hong San Si Temple, crm:P46_is_location_of (the temple is located on the street)
+3. Wayang Street, Malaysia, crm:P7_was_influenced_by (the Malay ethnicity had an influence on the street's culture)
+
+Please note that I did not create any new nodes or relationships outside of what was explicitly mentioned in the text.
+
+# CASE 8
+## IN
+f"You are a data scientist working for a company that is building a knowledge graph about Kuching Old Bazaar. Your task is to extract information from a text about {title} and convert it into a graph database. " + \
+f"Use the following ontology: {ontology}, returning a set of nodes and relationships." + \
+"For a node, give the name of the node and its type according to the ontology, according to the following format: NAME, crm:NODE_TYPE." + \
+"For a relationship, give the name of the first node, the name of the second node, and the relationship type according to the ontology according to the following format: NODE1, NODE2, crm:RELAIONSHIP_TYPE " + \
+"IMPORTANT: DO NOT MAKE UP ANYTHING AND DO NOT ADD ANY EXTRA DATA THAT IS NOT SPECIFICALLY GIVEN IN THE TEXT. ALSO DO NOT MAKE UP OR USE THINGS THAT ARE NOT IN THE GIVEN ONTOLOGY. " + \
+"Only add nodes and relationships that are part of the ontology, if you cannot find any relationships in the text, only return nodes." + \
+f"This is the text from which you should extract the nodes and relationships, the title of the text is denoted with 'TITLE=': {contents}
+
+## OUT
+Based on the provided text, I will extract nodes and relationships from the ontology. Here are the results:
+
+Nodes:
+1. Ong Tiang Swee, crm:E39_Actor
+2. Ong Ewe Hai, crm:E39_Actor
+3. Kuching, crm:E53_Place
+4. Singapore, crm:E53_Place
+5. Sarawak, crm:E53_Place
+6. North Borneo (Sabah), crm:E53_Place
+7. Hiap Soon Hin Company, crm:E41_Document
+8. Ong Tiang Swee and Son Company, crm:E41_Document
+9. Hockien Association, crm:E41_Document
+10. Hockien School, crm:E41_Document
+
+Relationships:
+1. Ong Ewe Hai, Ong Tiang Swee, crm:P22_was_parent_of
+2. Kuching, Ong Tiang Swee, crm:P17_was_birth_place_of
+3. Singapore, Ong Tiang Swee, crm:P21_was_education_place_of
+4. Ong Ewe Hai, Ong Tiang Swee, crm:P179i_was_sales_price_of
+5. Ong Tiang Swee, Hiap Soon Hin Company, crm:P17_was_creation_place_of
+6. Ong Tiang Swee, Ong Tiang Swee and Son Company, crm:P17_was_creation_place_of
+7. Ong Tiang Swee, Hockien Association, crm:P17_was_creation_place_of
+8. Ong Tiang Swee, Hockien School, crm:P17_was_creation_place_of
+
+Note: I did not include any relationships that are not explicitly mentioned in the text or do not fit within the provided ontology.
+
+# CASE 9
+## IN
+f"You are a data scientist working for a company that is building a knowledge graph about Kuching Old Bazaar. Your task is to extract information from a text about Kuching Old Bazaar and convert it into a graph database. " + \
+f"Use the following ontology: {ontology}, returning a set of nodes and relationships." + \
+"For a node, give the name of the node and its type according to the ontology, according to the following format: NAME, crm:NODE_TYPE." + \
+"For a relationship, give the name of the first node, the name of the second node, and the relationship type according to the ontology according to the following format: NODE1, NODE2, crm:RELAIONSHIP_TYPE " + \
+"IMPORTANT: DO NOT MAKE UP ANYTHING AND DO NOT ADD ANY EXTRA DATA THAT IS NOT SPECIFICALLY GIVEN IN THE TEXT. " + \
+"Only add nodes and relationships that are part of the ontology, if you cannot find any relationships in the text, only return nodes." + \
+f"This is the text from which you should extract the nodes and relationships, the title of the text is denoted with 'TITLE=': {contents}"
+
+## OUT
+After analyzing the text, I extracted the following nodes and relationships:
+
+Nodes:
+1. Ong Tiang Swee, crm:Person
+2. Ong Ewe Hai, crm:Person
+3. Kuching, crm:Location
+4. Singapore, crm:Location
+5. Sarawak, crm:Location
+6. North Borneo (Sabah), crm:Location
+7. Hiap Soon Hin Company, crm:Organization
+8. Ong Tiang Swee and Son Company, crm:Organization
+9. Rajah's government council, crm:Organization
+10. Hockien Association, crm:Organization
+11. Hockien School (福建义校), crm:Organization
+
+Relationships:
+1. Ong Ewe Hai, Ong Tiang Swee, crm:P179i_was_sales_price_of
+ERROR: did not find P179i_was_sales_price_of in ontology, skipping
