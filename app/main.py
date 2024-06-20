@@ -120,8 +120,18 @@ def output_to_csv(res: str, ontology: dict) -> str:
     return csv
 
 
+def get_inp_url() -> str:
+    inp = input("Please enter the webpage url: ").lower().strip()
+    if re.fullmatch(r"(https?:\/\/)?(www\.)?kcholdbazaar\.com\/\b([-a-zA-Z0-9()@:%_\+.~#?&\/=]*)", inp) is None:
+        print("URL invalid, must be a page of kcholdbazaar.com, try again.")
+        get_inp_url()
+
+    return inp
+
+
 if __name__ == '__main__':
-    url = "https://kcholdbazaar.com/040-temple-street-green-hill/"
+    # url = "https://kcholdbazaar.com/040-temple-street-green-hill/"
+    url = get_inp_url()
     try:
         res = get_url(url)
     except HTTPError:
@@ -149,27 +159,27 @@ if __name__ == '__main__':
             "IMPORTANT: DO NOT MAKE UP ANYTHING AND DO NOT ADD ANY EXTRA DATA THAT IS NOT SPECIFICALLY GIVEN IN THE TEXT. " + \
             "Only add nodes and relationships that are part of the ontology, if you cannot find any relationships in the text, only return nodes." + \
             f"This is the text from which you should extract the nodes and relationships, the title of the text is denoted with 'TITLE=': {contents}"    # prompt = f"You are a data scientist working for a company that is building a graph database. Your task is to extract information from data about {title} and convert it into a graph database. " + \
-    # response = ollama.generate(model="llama3", prompt=prompt)["response"]
-    response = """**Nodes:**
+    response = ollama.generate(model="llama3", prompt=prompt)["response"]
+#     response = """**Nodes:**
 
-1. Temple Street, crm:Place
-2. Green Hill, crm:Place
-3. Reservoir Park, crm:Place
-4. Thompson Road, crm:Place (now known as Jalan Tunku Abdul Rahman)
-5. Tua Pek Kong Temple, crm:Place
-6. Old Chinese Chamber of Commerce, crm:Organization
-7. Sungai Kuching, crm:BodyOfWater
-8. Sungai Sarawak, crm:BodyOfWater
-9. Bukit Mata Kuching, crm:GeographicLocation
+# 1. Temple Street, crm:Place
+# 2. Green Hill, crm:Place
+# 3. Reservoir Park, crm:Place
+# 4. Thompson Road, crm:Place (now known as Jalan Tunku Abdul Rahman)
+# 5. Tua Pek Kong Temple, crm:Place
+# 6. Old Chinese Chamber of Commerce, crm:Organization
+# 7. Sungai Kuching, crm:BodyOfWater
+# 8. Sungai Sarawak, crm:BodyOfWater
+# 9. Bukit Mata Kuching, crm:GeographicLocation
 
-**Relationships:**
+# **Relationships:**
 
-1. Temple Street, Tua Pek Kong Temple, crm:P195_was_a_presence_of
-2. Temple Street, Thompson Road, crm:P182i_starts_after_or_with_the_end_of
-3. Temple Street, Sungai Kuching, crm:P179i_was_sales_price_of
+# 1. Temple Street, Tua Pek Kong Temple, crm:P195_was_a_presence_of
+# 2. Temple Street, Thompson Road, crm:P182i_starts_after_or_with_the_end_of
+# 3. Temple Street, Sungai Kuching, crm:P179i_was_sales_price_of
 
-Please note that I have only extracted nodes and relationships mentioned in the provided text and according to the ontology. If there are no specific relationships mentioned in the text, I did not create any fictional ones.
-"""
+# Please note that I have only extracted nodes and relationships mentioned in the provided text and according to the ontology. If there are no specific relationships mentioned in the text, I did not create any fictional ones.
+# """
     print(response)
 
     csv_str = output_to_csv(response, ontology_without_money)
