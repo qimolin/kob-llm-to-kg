@@ -4,7 +4,6 @@ services:
     build:
       context: ./app
       dockerfile: Dockerfile
-    restart: always
     volumes:
       - ./neo4j/import:/app/neo4j/import
     networks:
@@ -34,7 +33,6 @@ services:
       - NEO4J_dbms_security_procedures_allowlist=apoc.*,n10s.*
       - NEO4J_dbms_security_allow__csv__import__from__file__urls=true
       - NEO4J_PLUGINS=["apoc", "n10s"]
-    restart: always
 
   ollama:
     image: ollama/ollama:latest
@@ -47,7 +45,6 @@ services:
     container_name: ollama
     pull_policy: always
     tty: true
-    restart: always
     entrypoint: ['/usr/bin/bash', '/entrypoint.sh']
     environment:
       - OLLAMA_KEEP_ALIVE=24h

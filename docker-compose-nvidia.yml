@@ -4,7 +4,6 @@ services:
     build:
       context: ./app
       dockerfile: Dockerfile
-    restart: always
     volumes:
       - ./neo4j/import:/app/neo4j/import
     networks:
@@ -32,7 +31,6 @@ services:
       - NEO4J_ACCEPT_LICENSE_AGREEMENT=yes
       - NEO4J_AUTH=neo4juser/neo4jpass
       - NEO4JLABS_PLUGINS='["apoc", "n10s"]'
-    restart: always
 
   ollama:
     volumes:
