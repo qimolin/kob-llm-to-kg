@@ -58,7 +58,7 @@ def load_content_to_database(filePath: str) -> None:
         for line in f:
             if line.startswith("_id"):
                 continue
-            if line.split(",")[0].isdigit():
+            if line.split(",")[0].isdecimal() and line.split(",")[0].strip() !='' :
                 nodes += line
                 idIntTableRow[int(line.split(",")[0])] = line.split(",")[2] 
             else:
