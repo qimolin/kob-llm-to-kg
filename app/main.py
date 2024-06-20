@@ -4,6 +4,8 @@ import re
 import requests
 from bs4 import BeautifulSoup
 from requests import HTTPError, Response
+from neo4j import GraphDatabase
+import os
 
 
 def get_url(url: str) -> Response:
@@ -41,6 +43,62 @@ def get_contents(res: Response) -> str:
 
     return contents
 
+def load_content_to_database(filePath: str) -> None:
+    if not filePath.endswith(".csv"):
+        raise ValueError(f"Can only load .csv files, cannot load {filePath}")
+    
+    if os.path.getsize(filePath) == 0:
+        raise ValueError(f"File {filePath} is empty")
+    
+    nodes = "_id,_labels,id,name,type\n"
+    relationships = "_start,_end,_type\n"
+    idIntTableRow = {} # _id is only table row and not fixed
+    
+    with open(filePath, "r") as f:
+        for line in f:
+            if line.startswith("_id"):
+                continue
+            if line.split(",")[0].isdigit():
+                nodes += line
+                idIntTableRow[int(line.split(",")[0])] = line.split(",")[2] 
+            else:
+                startId = line.split(",")[0]
+                endId = line.split(",")[1]
+                relationship = idIntTableRow[int(startId)] + "," + idIntTableRow[int(endId)] + "," + line.split(",")[2]
+                relationships += relationship
+
+    nodesFilePath = filePath.replace(".csv", "_nodes.csv")
+    relationshipsFilePath = filePath.replace(".csv", "_relationships.csv")
+
+    with open(nodesFilePath, "w+") as f:
+        f.write(nodes.strip())
+    with open(relationshipsFilePath, "w+") as f:
+        f.write(relationships.strip())        
+
+    # Insert contents to database
+    print(f"Inserting {filePath} to database")
+
+    # URI examples: "neo4j://localhost", "neo4j+s://xxx.databases.neo4j.io"
+    URI = "neo4j://neo4j"
+    AUTH = ("neo4j",  os.getenv('NEO4J_PASSWORD'))
+    nodesQuery="""LOAD CSV WITH HEADERS FROM '{file}' AS csvLine
+            CALL {
+                WITH csvLine
+                CREATE (n \{id: csvLine.id, _labels: csvLine._labels, name: csvLine.name, type: csvLine.type\})
+            } IN TRANSACTIONS OF 2 ROWS""".format(file=nodesFilePath)
+    realtionsipQuery="""LOAD CSV WITH HEADERS FROM '{file}' AS csvLine
+            CALL {
+                WITH csvLine
+                MATCH (n \{name: csvline.name\}), (:Movie \{id: toInteger(csvLine.movieId)\})
+                CREATE (person)-[:ACTED_IN \{role: csvLine.role\}]->(movie)
+            } IN TRANSACTIONS OF 2 ROWS""".format(file=filePath)
+
+    with GraphDatabase.driver(URI, auth=AUTH) as driver:
+        driver.verify_connectivity()
+        driver.execute_query(
+            """ """,
+            database_="neo4j"
+        )
 
 def check_if_in_ontology(ontology: dict, check: str) -> str | None:
     if check in ontology["@context"]:

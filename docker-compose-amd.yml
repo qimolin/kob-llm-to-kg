@@ -5,8 +5,12 @@ services:
       context: ./app
       dockerfile: Dockerfile
     restart: always
+    volumes:
+      - ./neo4j/import:/app/neo4j/import
     networks:
       - ollama-docker
+    environment:
+      - NEO4J_PASSWORD=neo4jpass
 
   neo4j:
     container_name: neo4j
