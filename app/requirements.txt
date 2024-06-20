@@ -1,4 +1,6 @@
 beautifulsoup4
+json
 lxml
 selenium
 requests
+ollama

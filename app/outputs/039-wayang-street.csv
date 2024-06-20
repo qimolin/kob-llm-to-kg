@@ -1,0 +1,4 @@
+_id,_labels,id,name,type,_start,_end,_type
+1,:E2_Temporal_Entity,1,Wayang Street,,,,
+2,:E2_Temporal_Entity,2,Hua Xiang Street,,,,
+,,,,,1,2,P9_consists_of
