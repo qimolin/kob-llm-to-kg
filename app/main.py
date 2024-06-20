@@ -78,27 +78,32 @@ def load_content_to_database(filePath: str) -> None:
     # Insert contents to database
     print(f"Inserting {filePath} to database")
 
-    # URI examples: "neo4j://localhost", "neo4j+s://xxx.databases.neo4j.io"
     URI = "neo4j://neo4j"
-    AUTH = ("neo4j",  os.getenv('NEO4J_PASSWORD'))
-    nodesQuery="""LOAD CSV WITH HEADERS FROM '{file}' AS csvLine
-            CALL {
-                WITH csvLine
-                CREATE (n \{id: csvLine.id, _labels: csvLine._labels, name: csvLine.name, type: csvLine.type\})
-            } IN TRANSACTIONS OF 2 ROWS""".format(file=nodesFilePath)
-    realtionsipQuery="""LOAD CSV WITH HEADERS FROM '{file}' AS csvLine
-            CALL {
-                WITH csvLine
-                MATCH (n \{name: csvline.name\}), (:Movie \{id: toInteger(csvLine.movieId)\})
-                CREATE (person)-[:ACTED_IN \{role: csvLine.role\}]->(movie)
-            } IN TRANSACTIONS OF 2 ROWS""".format(file=filePath)
+    URI="bolt://localhost:7687"
+    # AUTH = ("neo4j",  os.getenv('NEO4J_PASSWORD'))
+    AUTH = ("neo4j",  "neo4jpass")
+    nodesQuery=f"LOAD CSV WITH HEADERS FROM 'file:///{nodesFilePath.split('/')[-1]}' AS csvLine CALL {{ WITH csvLine CREATE (:n {{id: csvLine.id, labels: csvLine._labels, name: csvLine.name, type: csvLine.type }} ) }}"
+    
+    realtionsipQuery=f"""LOAD CSV WITH HEADERS from 'file:///{relationshipsFilePath.split('/')[-1]}' AS line
+        WITH line._start AS subject, line._end AS object, line._type AS relation_type
+        MATCH (s:n {{id: subject}})
+        MATCH (o:n {{id: object}})
+        CALL apoc.merge.relationship(s, relation_type, {{}}, {{}}, o, {{}})
+        YIELD rel
+        RETURN rel"""
 
     with GraphDatabase.driver(URI, auth=AUTH) as driver:
         driver.verify_connectivity()
         driver.execute_query(
-            """ """,
+            nodesQuery,
             database_="neo4j"
         )
+        print(f"Inserted nodes from {nodesFilePath} to database")
+        driver.execute_query(
+            realtionsipQuery,
+            database_="neo4j"
+        )
+        print(f"Inserted relationships from {relationshipsFilePath} to database")
 
 def check_if_in_ontology(ontology: dict, check: str) -> str | None:
     if check in ontology["@context"]:
