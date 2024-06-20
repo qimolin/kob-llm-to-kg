@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 from requests import HTTPError, Response
 from neo4j import GraphDatabase
 import os
-
+import uuid
 
 def get_url(url: str) -> Response:
     if "kcholdbazaar.com" not in url:
@@ -118,7 +118,6 @@ def check_if_in_ontology(ontology: dict, check: str) -> str | None:
 def output_to_csv(res: str, ontology: dict) -> str:
     nodes = {}
     relationships = set()
-    id_counter = 1
 
     reading_nodes = False
     reading_relationships = False
@@ -150,8 +149,7 @@ def output_to_csv(res: str, ontology: dict) -> str:
             else:
                 label = check_if_in_ontology(ontology, label)
                 if label is None: continue
-                nodes[name] = { "id": id_counter, "label": label }
-                id_counter += 1 # TODO: fix this
+                nodes[name] = { "id": uuid.uuid4(), "label": label }
         elif reading_relationships:
             m = re.match(r"[0-9]\. *(.+), *(.+), *crm:([^\s]+) *(\(.*\))*", line)
             if m is None: continue
