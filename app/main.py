@@ -67,8 +67,8 @@ def load_content_to_database(filePath: str) -> None:
                 relationship = idIntTableRow[int(startId)] + "," + idIntTableRow[int(endId)] + "," + line.split(",")[7]
                 relationships += relationship
 
-    nodesFilePath = filePath.replace(".csv", "_nodes.csv")
-    relationshipsFilePath = filePath.replace(".csv", "_relationships.csv")
+    nodesFilePath = f"./neo4j/import/{filePath.split("/")[-1]}".replace(".csv", "_nodes.csv")
+    relationshipsFilePath = f"./neo4j/import/{filePath.split("/")[-1]}".replace(".csv", "_relationships.csv")
 
     with open(nodesFilePath, "w+") as f:
         f.write(nodes.strip())
