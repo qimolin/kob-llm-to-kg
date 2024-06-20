@@ -175,23 +175,9 @@ def output_to_csv(res: str, ontology: dict) -> str:
 
     return csv
 
-
-if __name__ == '__main__':
-    url = "https://kcholdbazaar.com/040-temple-street-green-hill/"
-    try:
-        res = get_url(url)
-    except HTTPError:
-        raise ConnectionError(f"Error retrieving list from {url}")
-
-    contents = get_contents(res)
-
-    page_name = url.strip("/").split("/")[-1]
-    with open(f"./texts/{page_name}.txt", "w+") as f:
-        print(contents)
-        f.write(contents.strip())
-
+def send_to_ollama(contents: str) -> str:
     with open("./ontology.json", "r") as f:
-        ontology = json.loads(f.read())
+            ontology = json.loads(f.read())
 
     with open("./ontology_without_money.json", "r") as f:
         ontology_without_money = json.loads(f.read())
@@ -230,8 +216,24 @@ Please note that I have only extracted nodes and relationships mentioned in the 
 
     csv_str = output_to_csv(response, ontology_without_money)
     with open(f"./outputs/{page_name}.csv", "w+") as f:
-        f.write(csv_str)
+        f.write(csv_str)    
 
-    # from ollama import Client
-    # client = Client(host='ollama')
-    # response = client.generate(model="llama3", prompt=prompt)
+
+if __name__ == '__main__':
+    url = "https://kcholdbazaar.com/040-temple-street-green-hill/"
+    try:
+        res = get_url(url)
+    except HTTPError:
+        raise ConnectionError(f"Error retrieving list from {url}")
+
+    contents = get_contents(res)
+
+    page_name = url.strip("/").split("/")[-1]
+    # with open(f"./texts/{page_name}.txt", "w+") as f:
+    #     print(contents)
+    #     f.write(contents.strip())
+    # if os.getenv("SKIP_OLLAMA") == "True":
+    if False:
+        send_to_ollama(contents)
+
+    load_content_to_database(f"./outputs/{page_name}.csv")
