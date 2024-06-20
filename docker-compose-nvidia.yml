@@ -8,8 +8,10 @@ services:
       - ./neo4j/import:/app/neo4j/import
     networks:
       - ollama-docker
+      - neo4j-internal
     environment:
       - NEO4J_PASSWORD=neo4jpass
+      - USE_OLLAMA=True
 
   neo4j:
     container_name: neo4j
