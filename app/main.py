@@ -59,12 +59,12 @@ def load_content_to_database(filePath: str) -> None:
             if line.startswith("_id"):
                 continue
             if line.split(",")[0].isdecimal() and line.split(",")[0].strip() !='' :
-                nodes += line
+                nodes += ','.join(line.split(",")[:5]) + "\n"
                 idIntTableRow[int(line.split(",")[0])] = line.split(",")[2] 
             else:
-                startId = line.split(",")[0]
-                endId = line.split(",")[1]
-                relationship = idIntTableRow[int(startId)] + "," + idIntTableRow[int(endId)] + "," + line.split(",")[2]
+                startId = line.split(",")[5]
+                endId = line.split(",")[6]
+                relationship = idIntTableRow[int(startId)] + "," + idIntTableRow[int(endId)] + "," + line.split(",")[7]
                 relationships += relationship
 
     nodesFilePath = filePath.replace(".csv", "_nodes.csv")
