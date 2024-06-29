@@ -44,6 +44,15 @@ To start the application, follow these steps:
     python main.py
     ```
 
+The webscraper carries out the following steps:
+1. User inputs a kcholdbazaar.com page URL (``get_inp_url``).
+2. The page is retrieved (``get_url``) and the English text from the page is retrieved (``get_contents``)
+3. The English page is fed into the LLM along with the ontology (``send_to_ollama``). The LLM then returns nodes and relationships, which have to be processed. For each node or relationship, the given label ID needs to be checked, as the LLM sometimes gives incorrect labels. If a label is not part of the ontology, it is checked without the ID and, if there is a match, is returned with the proper ID (``check_if_in_ontology``).
+4. The nodes and relationships are written to a CSV file in the ``app/outputs/`` folder.
+5. The nodes and relationships are stored in the Neo4j database (``load_content_to_database``)
+
+The prompt that is currently used was arrived at through trial-and-error, and it is still far from perfect. So those that want to improve it do not have to start completely over, some attempted prompts and their outputs have been stored in ``app/outputs/prompts_in_out.md``.
+
 ## Features checklist
 - [x] Dockerized application (neo4j, ollama, ollama ui, python webscraper)
 - [x] Python web scraper
