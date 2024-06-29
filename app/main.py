@@ -210,8 +210,7 @@ def send_to_ollama(contents: str) -> str:
     page_name = url.strip("/").split("/")[-1]
 
     contents = get_contents(res)
-    with open(f"./texts/{page_name}.txt", "w+") as f:
-        f.write(contents.strip())
+    print(contents)
 
     with open("./ontology.json", "r") as f:
         ontology = json.loads(f.read())
@@ -248,8 +247,7 @@ if __name__ == '__main__':
     contents = get_contents(res)
 
     page_name = url.strip("/").split("/")[-1]
-    with open(f"./texts/{page_name}.txt", "w+") as f:
-        print(contents)
-        f.write(contents.strip())
+    print(contents)
+
     if os.getenv("SKIP_OLLAMA") == "True":
         send_to_ollama(contents)
