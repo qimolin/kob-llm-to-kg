@@ -222,7 +222,7 @@ def send_to_ollama(contents: str) -> str:
     # OLLAMA
     print("starting with ollama")
     prompt = f"You are a data scientist working for a company that is building a knowledge graph about Kuching Old Bazaar. Your task is to extract information from a text about Kuching Old Bazaar and convert it into a graph database. " + \
-            f"Use the following ontology: {ontology_without_money}, returning a set of nodes and relationships." + \
+            f"Use the following ontology: {ontology}, returning a set of nodes and relationships." + \
             "For a node, give the name of the node and its type according to the ontology, according to the following format: (NAME, crm:NODE_TYPE). " + \
             "For a relationship, give the name of the first node, the name of the second node, and the relationship type according to the ontology according to the following format: (NODE1, NODE2, crm:RELAIONSHIP_TYPE) " + \
             "IMPORTANT: DO NOT MAKE UP ANYTHING AND DO NOT ADD ANY EXTRA DATA THAT IS NOT SPECIFICALLY GIVEN IN THE TEXT. " + \
@@ -230,7 +230,7 @@ def send_to_ollama(contents: str) -> str:
             f"This is the text from which you should extract the nodes and relationships, the title of the text is denoted with 'TITLE=': {contents}"
     response = ollama.generate(model="llama3", prompt=prompt)["response"]
 
-    csv_str = output_to_csv(response, ontology)
+    csv_str = output_to_csv(response, ontology_without_money)
     with open(f"./outputs/{page_name}.csv", "w+") as f:
         f.write(csv_str)
 
