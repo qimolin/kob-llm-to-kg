@@ -44,6 +44,8 @@ def get_contents(res: Response) -> str:
     return contents
 
 def load_content_to_database(filePath: str) -> None:
+    
+    # check if file exists and is csv
     if not filePath.endswith(".csv"):
         raise ValueError(f"Can only load .csv files, cannot load {filePath}")
     
@@ -56,17 +58,21 @@ def load_content_to_database(filePath: str) -> None:
     
     with open(filePath, "r") as f:
         for line in f:
-            if line.startswith("_id"):
+            # skip header
+            if line.startswith("_id"): 
                 continue
-            if line.split(",")[0].isdecimal() and line.split(",")[0].strip() !='' :
+            # add row to nodes csv
+            if line.split(",")[0].isdecimal() and line.split(",")[0].strip() !='' : 
                 nodes += ','.join(line.split(",")[:5]) + "\n"
                 idIntTableRow[int(line.split(",")[0])] = line.split(",")[2] 
+            # add row to relationships csv
             else:
                 startId = line.split(",")[5]
                 endId = line.split(",")[6]
                 relationship = idIntTableRow[int(startId)] + "," + idIntTableRow[int(endId)] + "," + line.split(",")[7]
                 relationships += relationship
 
+    # write to file
     nodesFilePath = f"./neo4j/import/{filePath.split("/")[-1]}".replace(".csv", "_nodes.csv")
     relationshipsFilePath = f"./neo4j/import/{filePath.split("/")[-1]}".replace(".csv", "_relationships.csv")
 
@@ -234,11 +240,10 @@ if __name__ == '__main__':
     contents = get_contents(res)
 
     page_name = url.strip("/").split("/")[-1]
-    # with open(f"./texts/{page_name}.txt", "w+") as f:
-    #     print(contents)
-    #     f.write(contents.strip())
-    # if os.getenv("SKIP_OLLAMA") == "True":
-    if False:
+    with open(f"./texts/{page_name}.txt", "w+") as f:
+        print(contents)
+        f.write(contents.strip())
+    if os.getenv("SKIP_OLLAMA") == "True":
         send_to_ollama(contents)
 
     load_content_to_database(f"./outputs/{page_name}.csv")
