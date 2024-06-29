@@ -9,6 +9,7 @@ import os
 import uuid
 
 def get_url(url: str) -> Response:
+    """Retrieve page from kcholdbazaar.com."""
     if "kcholdbazaar.com" not in url:
         raise ValueError(f"Can only retrieve KOB URLs, cannot get {url}.")
 
@@ -20,6 +21,7 @@ def get_url(url: str) -> Response:
 
 
 def get_contents(res: Response) -> str:
+    """Extract English text from Response."""
     soup = BeautifulSoup(res.text, features="html.parser")
 
     title_soup = soup.find("h1", attrs={"class": "entry-title"})
@@ -44,7 +46,7 @@ def get_contents(res: Response) -> str:
     return contents
 
 def load_content_to_database(filePath: str) -> None:
-
+    """Load data to Neo4j database."""
     # check if file exists and is csv
     if not filePath.endswith(".csv"):
         raise ValueError(f"Can only load .csv files, cannot load {filePath}")
@@ -112,11 +114,11 @@ def load_content_to_database(filePath: str) -> None:
         print(f"Inserted relationships from {relationshipsFilePath} to database")
 
 def check_if_in_ontology(ontology: dict, check: str) -> str | None:
+    """Check if 'check' is in ontology and if so, return with proper ID."""
     if check in ontology["@context"]:
         return check
 
     check_without_id = "_".join(check.split("_")[0:])
-    print(check_without_id)
     for k in ontology["@context"]:
         if k == "crm": continue
         if "_".join(k.split("_")[1:]) == check_without_id:
@@ -127,6 +129,7 @@ def check_if_in_ontology(ontology: dict, check: str) -> str | None:
 
 
 def output_to_csv(res: str, ontology: dict) -> str:
+    """Save nodes and relationships to csv."""
     nodes = {}
     relationships = set()
 
@@ -188,6 +191,7 @@ def output_to_csv(res: str, ontology: dict) -> str:
 
 
 def get_inp_url() -> str:
+    """Prompt user to input URL for kcholdbazaar.com page."""
     inp = input("Please enter the webpage url: ").lower().strip()
     if re.fullmatch(r"(https?:\/\/)?(www\.)?kcholdbazaar\.com\/\b([-a-zA-Z0-9()@:%_\+.~#?&\/=]*)", inp) is None:
         print("URL invalid, must be a page of kcholdbazaar.com, try again.")
@@ -197,16 +201,29 @@ def get_inp_url() -> str:
 
 
 def send_to_ollama(contents: str) -> str:
+    """Use ollama to extract nodes and relationships for knowledge graph."""
+    url = get_inp_url()
+    try:
+        res = get_url(url)
+    except HTTPError:
+        raise ConnectionError(f"Error retrieving list from {url}")
+    page_name = url.strip("/").split("/")[-1]
+
+    contents = get_contents(res)
+    with open(f"./texts/{page_name}.txt", "w+") as f:
+        f.write(contents.strip())
+
     with open("./ontology.json", "r") as f:
-            ontology = json.loads(f.read())
+        ontology = json.loads(f.read())
 
     with open("./ontology_without_money.json", "r") as f:
+        # Ontology without money is used because otherwise LLM over-focuses on relationships related to money.
         ontology_without_money = json.loads(f.read())
 
     # OLLAMA
     print("starting with ollama")
     prompt = f"You are a data scientist working for a company that is building a knowledge graph about Kuching Old Bazaar. Your task is to extract information from a text about Kuching Old Bazaar and convert it into a graph database. " + \
-            f"Use the following ontology: {ontology}, returning a set of nodes and relationships." + \
+            f"Use the following ontology: {ontology_without_money}, returning a set of nodes and relationships." + \
             "For a node, give the name of the node and its type according to the ontology, according to the following format: (NAME, crm:NODE_TYPE). " + \
             "For a relationship, give the name of the first node, the name of the second node, and the relationship type according to the ontology according to the following format: (NODE1, NODE2, crm:RELAIONSHIP_TYPE) " + \
             "IMPORTANT: DO NOT MAKE UP ANYTHING AND DO NOT ADD ANY EXTRA DATA THAT IS NOT SPECIFICALLY GIVEN IN THE TEXT. " + \
@@ -214,10 +231,11 @@ def send_to_ollama(contents: str) -> str:
             f"This is the text from which you should extract the nodes and relationships, the title of the text is denoted with 'TITLE=': {contents}"
     response = ollama.generate(model="llama3", prompt=prompt)["response"]
 
-
-    csv_str = output_to_csv(response, ontology_without_money)
+    csv_str = output_to_csv(response, ontology)
     with open(f"./outputs/{page_name}.csv", "w+") as f:
         f.write(csv_str)
+
+    load_content_to_database(f"./outputs/{page_name}.csv")
 
 
 if __name__ == '__main__':
@@ -235,5 +253,3 @@ if __name__ == '__main__':
         f.write(contents.strip())
     if os.getenv("SKIP_OLLAMA") == "True":
         send_to_ollama(contents)
-
-    load_content_to_database(f"./outputs/{page_name}.csv")
