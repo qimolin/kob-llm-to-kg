@@ -2,21 +2,41 @@
 
 # neo4j 
 
+In this section, the requriements and steps to setup the neo4j database are described. Further the loading of the Data into the database is described, as well as the constraint of these steps.
+
 ## Automatic Setup
 
 When the neo4j container is started, the following steps are automatically executed:
 - The APOC and neosemantics libraries are installed
 - The unique uri constraint is created (if it does not exist)
 
+The APOC library is used to load files into the database, while the neosemantics library enables neo4j to handle RDF data. To reproduce this in a docker environment, the plugins need to be named in the environment variable `NEO4J_PLUGINS`, and provided as a list. In a native install, the plugins need to be placed in the `plugins` folder of the neo4j installation, as jar files. See the [neo4j documentation](https://neo4j.com/docs/operations-manual/current/configuration/plugins/) for more information.  
+The unique uri constraint is created to ensure that the uri of the nodes is unique. This is important for the data import, as the uri is used to identify the nodes.
+
 ## Ontology Import
 
-To import the CIDOC-CRM ontology, follow these steps, it is required every time the data folder is empty:
+To import the CIDOC-CRM ontology, follow these steps, it is required every time the data folder has been emptied:
 - start docker container
-- run the following command in the neo4j browser
+- run the following command in the [neo4j browser](https://neo4j.com/docs/browser-manual/current/about-browser/)
+
 ``` cypher
 CALL n10s.graphconfig.init({ handleVocabUris: 'MAP'})
 CALL n10s.onto.import.fetch("https://cidoc-crm.org/rdfs/7.1.3/CIDOC_CRM_v7.1.3.rdfs","RDF/XML");
 ```
+
+## Data Import
+
+The data is imported at the execution of the python script, once the data has been extracted from the LLM. It is expected to have the data available in the csv format. The generated data is then split into 2 files, one for the nodes and one for the relationships. The rows with the nodes start with an integer value. The relationship rows are updated, so that the id of the node is used instad of the table row number.  
+The data is then loaded into the neo4j database using the APOC library. First the nodes are loaded, then the relationships. The following cypher commands are used to load the data.  
+The following settings need to be set in the neo4j.conf file (if the file does not exist in the conf folder, create it) to allow the import of csv files from the file system:
+
+```conf
+dbms.directories.import=import
+dbms.security.allow_csv_import_from_file_urls=true
+```
+
+### Limitations
+If the the script is executed multiple times, the data is appended to the database. This can be solved by bounding the UUID to a set of properties of each node, e.g. name, type, label. Additionally, are the nodes not properly labeled, which may be due to a not optimal formulated cypher query, may be solved by replacing :n with csvLine._labels. As indicated in the code the neo4j password should not be hardcoded.
 
 # Docker Compose
 ## Ollama
