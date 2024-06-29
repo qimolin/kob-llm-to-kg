@@ -1,4 +1,54 @@
 # kob-llm-to-kg
+This repository is for converting [Kuching Old Bazaar](https://kcholdbazaar.com/) into a knowledge graph in Neo4j using Ollama and specifically the llama3 model.
+
+## Table of Contents
+- [Requirements](#requirements)
+- [Usage](#usage)
+- [Features](#features-checklist)
+- [Configuration](#configuration)
+- [neo4j](#neo4j)
+  - [Automatic Setup](#automatic-setup)
+  - [Ontology Import](#ontology-import)
+  - [Data Import](#data-import)
+- [Docker Compose](#docker-compose)
+  - [Ollama](#ollama)
+
+## Requirements
+- Docker
+- Python
+
+## Usage
+To start the application, follow these steps:
+1. Start the Docker containers:
+    ```sh
+    docker-compose up -d
+    ```
+2. Use the CLI to specify the target website for the web scraper:
+    ```sh
+    python webscraper.py --url https://target-website.com
+    ```
+3. Import the existing ontology into Neo4j and load the data:
+    ```sh
+    python import_data.py
+    ```
+
+## Features checklist
+- [x] Dockerized application (neo4j, ollama, ollama ui, python webscraper)
+- [x] Python web scraper
+- [x] Allow user to use CLI to specify target website
+- [x] Import existing ontology into neo4j
+- [x] Import data into neo4j
+- [x] Test prompts derived from [NaLLM](https://github.com/neo4j/NaLLM)
+- [x] Output data into useful format (csv) 
+- [ ] Test with bigger models for potentially better results
+- [ ] Integrate knowledge graph into [Kuching Old Bazaar](https://kcholdbazaar.com/)
+
+## Configuration
+Configure the following settings in the `neo4j.conf` file to allow the import of CSV files from the file system:
+```conf
+dbms.directories.import=import
+dbms.security.allow_csv_import_from_file_urls=true
+```
 
 # neo4j 
 
