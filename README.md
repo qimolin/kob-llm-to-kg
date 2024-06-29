@@ -3,7 +3,7 @@ This repository is for converting [Kuching Old Bazaar](https://kcholdbazaar.com/
 
 ## Table of Contents
 - [Requirements](#requirements)
-- [Usage](#usage)
+- [Usage of Web Scraper](#usage-of-web-scraper)
 - [Features](#features-checklist)
 - [neo4j](#neo4j)
   - [Automatic Setup](#automatic-setup)
