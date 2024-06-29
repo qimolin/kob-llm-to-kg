@@ -4,7 +4,9 @@ import re
 import requests
 from bs4 import BeautifulSoup
 from requests import HTTPError, Response
-
+from neo4j import GraphDatabase
+import os
+import uuid
 
 def get_url(url: str) -> Response:
     if "kcholdbazaar.com" not in url:
@@ -41,6 +43,73 @@ def get_contents(res: Response) -> str:
 
     return contents
 
+def load_content_to_database(filePath: str) -> None:
+
+    # check if file exists and is csv
+    if not filePath.endswith(".csv"):
+        raise ValueError(f"Can only load .csv files, cannot load {filePath}")
+
+    if os.path.getsize(filePath) == 0:
+        raise ValueError(f"File {filePath} is empty")
+
+    nodes = "_id,_labels,id,name,type\n"
+    relationships = "_start,_end,_type\n"
+    idIntTableRow = {} # _id is only table row and not fixed
+
+    with open(filePath, "r") as f:
+        for line in f:
+            # skip header
+            if line.startswith("_id"):
+                continue
+            # add row to nodes csv
+            if line.split(",")[0].isdecimal() and line.split(",")[0].strip() !='' :
+                nodes += ','.join(line.split(",")[:5]) + "\n"
+                idIntTableRow[int(line.split(",")[0])] = line.split(",")[2]
+            # add row to relationships csv
+            else:
+                startId = line.split(",")[5]
+                endId = line.split(",")[6]
+                relationship = idIntTableRow[int(startId)] + "," + idIntTableRow[int(endId)] + "," + line.split(",")[7]
+                relationships += relationship
+
+    # write to file
+    nodesFilePath = f"./neo4j/import/{filePath.split("/")[-1]}".replace(".csv", "_nodes.csv")
+    relationshipsFilePath = f"./neo4j/import/{filePath.split("/")[-1]}".replace(".csv", "_relationships.csv")
+
+    with open(nodesFilePath, "w+") as f:
+        f.write(nodes.strip())
+    with open(relationshipsFilePath, "w+") as f:
+        f.write(relationships.strip())
+
+    # Insert contents to database
+    print(f"Inserting {filePath} to database")
+
+    URI = "neo4j://neo4j"
+    URI="bolt://localhost:7687"
+    # AUTH = ("neo4j",  os.getenv('NEO4J_PASSWORD'))
+    AUTH = ("neo4j",  "neo4jpass")
+    nodesQuery=f"LOAD CSV WITH HEADERS FROM 'file:///{nodesFilePath.split('/')[-1]}' AS csvLine CALL {{ WITH csvLine CREATE (:n {{id: csvLine.id, labels: csvLine._labels, name: csvLine.name, type: csvLine.type }} ) }}"
+
+    realtionsipQuery=f"""LOAD CSV WITH HEADERS from 'file:///{relationshipsFilePath.split('/')[-1]}' AS line
+        WITH line._start AS subject, line._end AS object, line._type AS relation_type
+        MATCH (s:n {{id: subject}})
+        MATCH (o:n {{id: object}})
+        CALL apoc.merge.relationship(s, relation_type, {{}}, {{}}, o, {{}})
+        YIELD rel
+        RETURN rel"""
+
+    with GraphDatabase.driver(URI, auth=AUTH) as driver:
+        driver.verify_connectivity()
+        driver.execute_query(
+            nodesQuery,
+            database_="neo4j"
+        )
+        print(f"Inserted nodes from {nodesFilePath} to database")
+        driver.execute_query(
+            realtionsipQuery,
+            database_="neo4j"
+        )
+        print(f"Inserted relationships from {relationshipsFilePath} to database")
 
 def check_if_in_ontology(ontology: dict, check: str) -> str | None:
     if check in ontology["@context"]:
@@ -60,7 +129,6 @@ def check_if_in_ontology(ontology: dict, check: str) -> str | None:
 def output_to_csv(res: str, ontology: dict) -> str:
     nodes = {}
     relationships = set()
-    id_counter = 1
 
     reading_nodes = False
     reading_relationships = False
@@ -92,8 +160,7 @@ def output_to_csv(res: str, ontology: dict) -> str:
             else:
                 label = check_if_in_ontology(ontology, label)
                 if label is None: continue
-                nodes[name] = { "id": id_counter, "label": label }
-                id_counter += 1 # TODO: fix this
+                nodes[name] = { "id": uuid.uuid4(), "label": label }
         elif reading_relationships:
             m = re.match(r"[0-9]\. *(.+), *(.+), *crm:([^\s]+) *(\(.*\))*", line)
             if m is None: continue
@@ -129,23 +196,9 @@ def get_inp_url() -> str:
     return inp
 
 
-if __name__ == '__main__':
-    # url = "https://kcholdbazaar.com/040-temple-street-green-hill/"
-    url = get_inp_url()
-    try:
-        res = get_url(url)
-    except HTTPError:
-        raise ConnectionError(f"Error retrieving list from {url}")
-
-    contents = get_contents(res)
-
-    page_name = url.strip("/").split("/")[-1]
-    with open(f"./texts/{page_name}.txt", "w+") as f:
-        print(contents)
-        f.write(contents.strip())
-
+def send_to_ollama(contents: str) -> str:
     with open("./ontology.json", "r") as f:
-        ontology = json.loads(f.read())
+            ontology = json.loads(f.read())
 
     with open("./ontology_without_money.json", "r") as f:
         ontology_without_money = json.loads(f.read())
@@ -160,12 +213,27 @@ if __name__ == '__main__':
             "Only add nodes and relationships that are part of the ontology, if you cannot find any relationships in the text, only return nodes." + \
             f"This is the text from which you should extract the nodes and relationships, the title of the text is denoted with 'TITLE=': {contents}"
     response = ollama.generate(model="llama3", prompt=prompt)["response"]
-    
+
 
     csv_str = output_to_csv(response, ontology_without_money)
     with open(f"./outputs/{page_name}.csv", "w+") as f:
         f.write(csv_str)
 
-    # from ollama import Client
-    # client = Client(host='ollama')
-    # response = client.generate(model="llama3", prompt=prompt)
+
+if __name__ == '__main__':
+    url = "https://kcholdbazaar.com/040-temple-street-green-hill/"
+    try:
+        res = get_url(url)
+    except HTTPError:
+        raise ConnectionError(f"Error retrieving list from {url}")
+
+    contents = get_contents(res)
+
+    page_name = url.strip("/").split("/")[-1]
+    with open(f"./texts/{page_name}.txt", "w+") as f:
+        print(contents)
+        f.write(contents.strip())
+    if os.getenv("SKIP_OLLAMA") == "True":
+        send_to_ollama(contents)
+
+    load_content_to_database(f"./outputs/{page_name}.csv")
