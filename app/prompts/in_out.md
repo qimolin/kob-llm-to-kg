@@ -377,3 +377,44 @@ Nodes:
 Relationships:
 1. Ong Ewe Hai, Ong Tiang Swee, crm:P179i_was_sales_price_of
 ERROR: did not find P179i_was_sales_price_of in ontology, skipping
+
+# CASE 10
+## IN
+prompt = f"You are a data scientist working for a company that is building a knowledge graph about Kuching Old Bazaar. Your task is to extract information from a text about Kuching Old Bazaar and convert it into a graph database. " + \
+f"Use the following ontology: {ontology}, returning a set of nodes and relationships." + \
+"For a node, give the name of the node and its type according to the ontology, according to the following format: NAME, crm:NODE_TYPE. Include dates as nodes as well. " + \
+"For a relationship, give the name of the first node, the name of the second node, and the relationship type according to the ontology according to the following format: NODE1, NODE2, crm:RELAIONSHIP_TYPE " + \
+"IMPORTANT: DO NOT MAKE UP ANYTHING AND DO NOT ADD ANY EXTRA DATA THAT IS NOT SPECIFICALLY GIVEN IN THE TEXT. " + \
+"Only add nodes and relationships that are part of the ontology, if you cannot find any relationships in the text, only return nodes." + \
+f"This is the text from which you should extract the nodes and relationships, the title of the text is denoted with 'TITLE=': {contents}"
+
+## OUT
+Based on the provided text, I extracted the following nodes and relationships:
+
+**Nodes:**
+
+1. Au Yong Wai Choi, crm:Person
+2. Guang Zhou, crm:Place
+3. Hong Kong, crm:Place
+4. Kuching, crm:Place
+5. Bishopsgate street, crm:Place
+6. Shop no. 12, crm:Place
+7. Uncle-in-law, crm:Person
+8. Aunt, crm:Person
+9. Father, crm:Person (implied by "paternal")
+10. Mother, crm:Person (implied by "maternal")
+
+**Relationships:**
+
+1. Au Yong Wai Choi was born in Guang Zhou, P182i_starts_after_or_with_the_end_of {Guang Zhou, crm:Place}
+2. Au Yong Wai Choi moved from Guang Zhou to Hong Kong, P179i_was_sales_price_of {Au Yong Wai Choi, crm:Person}
+3. Au Yong Wai Choi stayed with his paternal aunt and uncle-in-law in Kuching, P182i_starts_after_or_with_the_end_of {Kuching, crm:Place}
+4. Au Yong Wai Choi worked as an apprentice at the rented shop belonging to his aunt, P186_produced_thing_of_product_type {Au Yong Wai Choi, crm:Person}
+5. Uncle-in-law passed away, P182i_starts_after_or_with_the_end_of {Uncle-in-law, crm:Person}
+6. Au Yong took over the business from his uncle-in-law, P180_has_currency {Au Yong Wai Choi, crm:Person}
+7. The shop owner taught Au Yong the method of glass cutting and introduced businesses to him, P198_holds_or_supports {Shop owner, crm:Person; Au Yong Wai Choi, crm:Person}
+8. The shop was sold to Au Yong at the price of 10,000 dollars, P179i_was_sales_price_of {Au Yong Wai Choi, crm:Person}
+9. Au Yong paid slowly through instalments and officially owned the shop by age 21, P191_had_duration {Au Yong Wai Choi, crm:Person}
+10. Au Yong retired at age 90 after investing 70 years as a frame maker, P195_was_a_presence_of {Au Yong Wai Choi, crm:Person}
+
+Please note that I only extracted nodes and relationships mentioned in the provided text and did not make up any additional information.
