@@ -5,7 +5,6 @@ This repository is for converting [Kuching Old Bazaar](https://kcholdbazaar.com/
 - [Requirements](#requirements)
 - [Usage](#usage)
 - [Features](#features-checklist)
-- [Configuration](#configuration)
 - [neo4j](#neo4j)
   - [Automatic Setup](#automatic-setup)
   - [Ontology Import](#ontology-import)
@@ -17,19 +16,32 @@ This repository is for converting [Kuching Old Bazaar](https://kcholdbazaar.com/
 - Docker
 - Python
 
-## Usage
+## Usage of Web Scraper
 To start the application, follow these steps:
-1. Start the Docker containers:
+1. Go into app folder
+   ```sh
+   cd app
+   ```
+3. Create venv
     ```sh
-    docker-compose up -d
+    python -m venv .venv
     ```
-2. Use the CLI to specify the target website for the web scraper:
+4. Activate venv \
+    On Windows:
     ```sh
-    python webscraper.py --url https://target-website.com
+    .venv\Scripts\activate
     ```
-3. Import the existing ontology into Neo4j and load the data:
+   On macOS and Linux:
+   ```sh
+   source .venv/bin/activate
+   ```
+6. Install requirements
+   ```sh
+   python -r requirements.txt
+   ```
+7. Run scraper
     ```sh
-    python import_data.py
+    python main.py
     ```
 
 ## Features checklist
@@ -42,13 +54,6 @@ To start the application, follow these steps:
 - [x] Output data into useful format (csv) 
 - [ ] Test with bigger models for potentially better results
 - [ ] Integrate knowledge graph into [Kuching Old Bazaar](https://kcholdbazaar.com/)
-
-## Configuration
-Configure the following settings in the `neo4j.conf` file to allow the import of CSV files from the file system:
-```conf
-dbms.directories.import=import
-dbms.security.allow_csv_import_from_file_urls=true
-```
 
 # neo4j 
 
