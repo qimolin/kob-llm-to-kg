@@ -1,0 +1,68 @@
+_id,_labels,id,name,type,_start,_end,_type
+0,:E21_Person,d397611b-f260-4121-b967-edca9bda8579,Lau Chek,,,,
+1,:E74_Group,89e264cc-c5d7-4654-a3d7-cbe4577375e7,Kwong Wai Siew Association,,,,
+2,:E74_Group,35b2d074-46e8-45fc-8082-57d7187bc548,Brunei nobles,,,,
+3,:E52_TimeSpan,76e2837e-24e9-4c56-9def-606d27ea9c2c,1839,,,,
+4,:E21_Person,5a7e8219-d7d2-403d-b655-0bab7b41ae62,Harriette McDougall,,,,
+5,:E5_Event,55003842-a1d3-4934-b52a-3b1873f263b3,Bau Chinese Revolt,,,,
+6,:E52_TimeSpan,2144efcb-cc65-471d-9e14-9baf0179d58a,1848,,,,
+7,:E52_TimeSpan,17a1dba4-1dc8-4aaf-a5a2-70f3b6ccb1a3,1850s,,,,
+8,:E5_Event,cb105633-200a-4476-aec5-e3987bd0d0af,Arrival of James Brooke and his crew in Kuching,,,,
+9,:E52_TimeSpan,cc4d4d6e-1f98-4dd3-9f6f-f605ec673d52,1856,,,,
+10,:E53_Place,7eb5ac89-5180-4c7f-9a64-07b46f7812a4,Kuching,,,,
+11,:E53_Place,e155143d-fe0b-45be-8ee9-cd16ac18f154,Kuching Old Bazaar,,,,
+12,:E21_Person,ccdbc628-b274-424a-8e49-8477c6fc4e96,James Brooke,,,,
+13,:E53_Place,c8b24549-4f75-41e9-8490-68c72b2b03f8,Malay villages,,,,
+14,:E5_Event,c9d17e84-06e1-4526-a44d-e14fcde6e109,Arrival of Lau Chek and his compatriots in Kuching,,,,
+15,:E21_Person,5d87822f-1aba-491c-838b-ee0f44ace7ab,Reverend F. McDougall,,,,
+16,:E53_Place,cd31e65a-a368-4a9b-96c0-49b6e2d161cf,Sarawak,,,,
+19,:E53_Place,068aa73f-b08d-4a71-9e42-891cfb62fb00,Chinese bazaar,,,,
+20,:E53_Place,c872f7fe-7a94-4b24-b6cc-826a4ce8d2dc,Kling bazaar,,,,
+21,:E53_Place,ddebed00-30c6-4e5f-bc34-0a16c9a777c2,Gambier Street,,,,
+22,:E53_Place,28e83357-34de-4f28-8ad5-642e80316165,Indian Street,,,,
+23,:E53_Place,ca8401b7-acce-4f6c-87fb-41e21a808791,New Bazaar,,,,
+24,:E53_Place,e7201149-fc3d-45f1-877d-84f6ea021cef,Bau bazaar,,,,
+25,:E53_Place,1bc8fa38-ab31-4343-a20c-32d69579c660,Chinese settlements,,,,
+26,:E53_Place,58421574-06a6-4ad3-9313-66c57b9bd69e,Kuching Chinese Bazaar,,,,
+27,:E53_Place,731f1e7d-65a7-4f7f-871e-d22140336578,White Rajah Kingdom,,,,
+28,:E74_Group,979a297d-a4b3-4eea-83ab-206022a3b786,Chinese migrants,,,,
+29,:E22_HumanMadeObject,8c723921-bd7b-498f-bea4-c04c34634b79,Tua Pek Kong,building,,,
+30,:E22_HumanMadeObject,d73cde93-3e75-4bab-9559-a4aca3483718,Ancient Belian wood tombstones,artifact,,,
+31,:E5_Event,7bf2e0eb-85ff-4a52-afd6-96c1e527f2a4,Arrival of Reverend F. McDougall and his wife Harriette McDougall in Kuching,,,,
+32,:E74_Group,55349dc4-32dc-4b55-b31e-22f9f56507fa,Hakka miners,,,,
+33,:E53_Place,a851816a-2fd7-44fe-ba9b-f18849669177,Bau,,,,
+34,:E74_Group,7a0ebbdb-3af7-4834-bdc4-c06c17b3fd44,Chinese traders,,,,
+35,:E74_Group,90e3b8c8-c602-41fc-9497-b6f5dceca354,Bau Chinese,,,,
+36,:E22_HumanMadeObject,39b48af9-fff7-4a54-8d66-76a1dca10dcb,Kuching Tua Pek Kong,building,,,
+37,:E74_Group,687d34db-f1e8-4c66-802f-dbe1705cc5f9,Kuching Chinese,,,,
+38,:E74_Group,f04ccf45-d052-44d8-86b6-a17bb2bb76ea,Rajah government,,,,
+39,:E74_Group,61a40ed3-1e11-4ac8-8ee8-3891e033ba4d,Rajah's forces,,,,
+40,:E5_Event,719d9cc6-f3b8-448f-94e4-201849d00793,Renovation of Kuching Tua Pek Kong,,,,
+41,:E5_Event,94829484-17bc-4c66-bdfa-8aca775ed5bf,Bau miners massacre,,,,
+42,:E52_TimeSpan,f17c3f04-0a82-4efa-80eb-72148fea2b25,1883,,,,
+44,:E21_Person,3f0c8b8d-7c36-4bdd-9537-90f82cdb196e,Charles Brooke,,,,
+45,:E21_Person,3227e5d8-1d3c-471f-a924-f61e37ad6e9e,Test Person,,,,
+46,:E21_Person,09613c26-8987-4608-ac5b-e0835fb65fb0,Test Parent,,,,
+47,:E53_Place,567c6c13-73a3-41bb-ba29-cf90ab74f93d,Test Place,,,,
+48,:E30_Right,83f33701-4b83-4d3f-9ef5-66db50e2638b,Test Right,,,,
+49,:E52_TimeSpan,d7a2ac16-fec3-4f16-98c5-5a8359cdfdae,1830,,,,
+50,:E52_TimeSpan,f356e4e5-8709-4b69-bcf1-1ec185f31d22,1820s,,,,
+,,,,,1,0,P107_HAS_CURRENT_OR_FORMER_MEMBER
+,,,,,5,7,P4_HAS_TIME_SPAN
+,,,,,8,3,P4_HAS_TIME_SPAN
+,,,,,8,12,P11_HAD_PARTICIPANT
+,,,,,8,10,P7_TOOK_PLACE_AT
+,,,,,9,7,P86_FALLS_WITHIN
+,,,,,14,50,P4_HAS_TIME_SPAN
+,,,,,14,0,P11_HAD_PARTICIPANT
+,,,,,14,10,P7_TOOK_PLACE_AT
+,,,,,31,6,P4_HAS_TIME_SPAN
+,,,,,31,4,P11_HAD_PARTICIPANT
+,,,,,31,15,P11_HAD_PARTICIPANT
+,,,,,31,10,P7_TOOK_PLACE_AT
+,,,,,36,10,P55_HAS_CURRENT_LOCATION
+,,,,,40,9,P4_HAS_TIME_SPAN
+,,,,,40,36,P8_TOOK_PLACE_ON_OR_WITHIN
+,,,,,45,46,P152_HAS_PARENT
+,,,,,45,47,P74_HAS_CURRENT_OR_FORMER_RESIDENCE
+,,,,,45,48,P30_POSSESSES

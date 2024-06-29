@@ -1,8 +1,8 @@
 _id,_labels,id,name,type,_start,_end,_type
-1,:E53_Place,1,Temple Street,,,,
-2,:E53_Place,2,Green Hill,,,,
-3,:E53_Place,3,Reservoir Park,,,,
-4,:E53_Place,4,Thompson Road,,,,
-5,:E53_Place,5,Tua Pek Kong Temple,,,,
+1,:E53_Place,f2bec51c-b82f-4af0-89ff-9d48317bdd20,Temple Street,,,
+2,:E53_Place,3d404e77-1a80-48ea-b60c-68ca550b652c,Green Hill,,,,
+3,:E53_Place,304a487f-3835-4240-a098-06e2fe44831b,Reservoir Park,,,,
+4,:E53_Place,55374770-9b66-4783-b232-7d596937380a,Thompson Road,,,,
+5,:E53_Place,ac7a8846-8f72-4898-8a67-9b5044ff04de,Tua Pek Kong Temple,,,,
 ,,,,,1,5,P195_was_a_presence_of
 ,,,,,1,4,P182i_starts_after_or_with_the_end_of
