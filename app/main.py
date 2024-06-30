@@ -45,8 +45,11 @@ def get_contents(res: Response) -> str:
 
     return contents
 
+
 def load_content_to_database(filePath: str) -> None:
     """Load data to Neo4j database."""
+    print (f"Loading {filePath} to database")
+
     # check if file exists and is csv
     if not filePath.endswith(".csv"):
         raise ValueError(f"Can only load .csv files, cannot load {filePath}")
@@ -69,30 +72,29 @@ def load_content_to_database(filePath: str) -> None:
                 idIntTableRow[int(line.split(",")[0])] = line.split(",")[2]
             # add row to relationships csv
             else:
-                startId = line.split(",")[5]
-                endId = line.split(",")[6]
-                relationship = idIntTableRow[int(startId)] + "," + idIntTableRow[int(endId)] + "," + line.split(",")[7]
+                start_id = line.split(",")[5]
+                end_id = line.split(",")[6]
+                relationship = idIntTableRow[int(start_id)] + "," + idIntTableRow[int(end_id)] + "," + line.split(",")[7]
                 relationships += relationship
 
     # write to file
-    nodesFilePath = f"./neo4j/import/{filePath.split("/")[-1]}".replace(".csv", "_nodes.csv")
-    relationshipsFilePath = f"./neo4j/import/{filePath.split("/")[-1]}".replace(".csv", "_relationships.csv")
+    nodes_file_path = f"./neo4j/import/{filePath.split("/")[-1]}".replace(".csv", "_nodes.csv")
+    relationships_file_path = f"./neo4j/import/{filePath.split("/")[-1]}".replace(".csv", "_relationships.csv")
 
-    with open(nodesFilePath, "w+") as f:
+    with open(nodes_file_path, "w+") as f:
         f.write(nodes.strip())
-    with open(relationshipsFilePath, "w+") as f:
+    with open(relationships_file_path, "w+") as f:
         f.write(relationships.strip())
 
     # Insert contents to database
     print(f"Inserting {filePath} to database")
 
-    URI = "neo4j://neo4j"
-    URI="bolt://localhost:7687"
-    # AUTH = ("neo4j",  os.getenv('NEO4J_PASSWORD'))
-    AUTH = ("neo4j",  "neo4jpass")
-    nodesQuery=f"LOAD CSV WITH HEADERS FROM 'file:///{nodesFilePath.split('/')[-1]}' AS csvLine CALL {{ WITH csvLine CREATE (:n {{id: csvLine.id, labels: csvLine._labels, name: csvLine.name, type: csvLine.type }} ) }}"
+    uri = os.getenv('NEO4J_URI')
+    auth = ("neo4j",  os.getenv('NEO4J_PASSWORD'))
+    # auth = ("neo4j",  "neo4jpass")
+    nodes_query=f"LOAD CSV WITH HEADERS FROM 'file:///{nodes_file_path.split('/')[-1]}' AS csvLine CALL {{ WITH csvLine CREATE (:n {{id: csvLine.id, labels: csvLine._labels, name: csvLine.name, type: csvLine.type }} ) }}"
 
-    realtionsipQuery=f"""LOAD CSV WITH HEADERS from 'file:///{relationshipsFilePath.split('/')[-1]}' AS line
+    relationships_query=f"""LOAD CSV WITH HEADERS from 'file:///{relationships_file_path.split('/')[-1]}' AS line
         WITH line._start AS subject, line._end AS object, line._type AS relation_type
         MATCH (s:n {{id: subject}})
         MATCH (o:n {{id: object}})
@@ -100,18 +102,18 @@ def load_content_to_database(filePath: str) -> None:
         YIELD rel
         RETURN rel"""
 
-    with GraphDatabase.driver(URI, auth=AUTH) as driver:
+    with GraphDatabase.driver(uri, auth=auth) as driver:
         driver.verify_connectivity()
         driver.execute_query(
-            nodesQuery,
+            nodes_query,
             database_="neo4j"
         )
-        print(f"Inserted nodes from {nodesFilePath} to database")
+        print(f"Inserted nodes from {nodes_file_path} to database")
         driver.execute_query(
-            realtionsipQuery,
+            relationships_query,
             database_="neo4j"
         )
-        print(f"Inserted relationships from {relationshipsFilePath} to database")
+        print(f"Inserted relationships from {relationships_file_path} to database")
 
 def check_if_in_ontology(ontology: dict, check: str) -> str | None:
     """Check if 'check' is in ontology and if so, return with proper ID."""
@@ -234,8 +236,6 @@ def send_to_ollama(contents: str) -> str:
     with open(f"./outputs/{page_name}.csv", "w+") as f:
         f.write(csv_str)
 
-    load_content_to_database(f"./outputs/{page_name}.csv")
-
 
 if __name__ == '__main__':
     url = "https://kcholdbazaar.com/040-temple-street-green-hill/"
@@ -249,5 +249,7 @@ if __name__ == '__main__':
     page_name = url.strip("/").split("/")[-1]
     print(contents)
 
-    if os.getenv("SKIP_OLLAMA") == "True":
+    if os.getenv("SKIP_OLLAMA").lower() != "true":
         send_to_ollama(contents)
+
+    load_content_to_database(f"./outputs/{page_name}.csv")
